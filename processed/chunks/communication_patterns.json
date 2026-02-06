@@ -1,0 +1,85 @@
+{
+  "id": "communication_patterns",
+  "version": "1.0",
+  "type": "communication_patterns",
+  "source": "corpus/communication_patterns.md",
+  "chunks": [
+    {
+      "chunk_id": "cp_001",
+      "title": "CP-01: Neutral Acknowledgement",
+      "content": "Tujuan: Menunjukkan awareness tanpa membuka debat. Digunakan saat: disindir di publik, ditegur implisit, ada pressure tapi belum jelas arah. Pola Kalimat: mengakui pesan, tidak membela diri, menutup dengan netral. Risk: bisa terlihat pasif jika tidak ada follow-up.",
+      "tags": ["pattern", "neutral", "acknowledgement"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "cp_002",
+      "title": "CP-02: Private Clarification",
+      "content": "Tujuan: Memindahkan diskusi sensitif ke ruang aman. Digunakan saat: kritik di channel publik, instruksi ambigu, konflik implisit. Pola Kalimat: minta waktu privat, fokus klarifikasi bukan pembelaan. Risk: bisa dianggap menghindar jika timing salah.",
+      "tags": ["pattern", "private", "clarification"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "cp_003",
+      "title": "CP-03: Reframing to Action",
+      "content": "Tujuan: Mengubah kritik menjadi langkah konkret. Digunakan saat: feedback tidak jelas, ekspektasi samar, deadline tidak realistis. Pola Kalimat: ringkas ulang ekspektasi, tawarkan next step. Risk: over-commit jika tidak hati-hati.",
+      "tags": ["pattern", "reframing", "action"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "cp_004",
+      "title": "CP-04: Boundary Setting (Soft)",
+      "content": "Tujuan: Menetapkan batas tanpa terlihat defensif. Digunakan saat: kerjaan tambahan terus, scope creep, ekspektasi tidak realistis. Pola Kalimat: acknowledge dulu, tanyakan prioritas, tidak menolak langsung. Risk: batas tidak dihormati jika terlalu lembut.",
+      "tags": ["pattern", "boundary", "setting"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "cp_005",
+      "title": "CP-05: Visibility Claim",
+      "content": "Tujuan: Mengamankan kontribusi tanpa terlihat pamer. Digunakan saat: credit diambil orang lain, kerja di balik layar. Pola Kalimat: menyebut kontribusi secara faktual, tanpa klaim emosional. Risk: sensitif di kultur politis.",
+      "tags": ["pattern", "visibility", "claim"],
+      "priority": "medium"
+    },
+    {
+      "chunk_id": "cp_006",
+      "title": "CP-06: De-escalation",
+      "content": "Tujuan: Menurunkan tensi konflik. Digunakan saat: salah paham, konflik pasif-agresif, emosi mulai naik. Pola Kalimat: netral, mengakui perspektif lain, fokus solusi. Risk: masalah inti tidak terselesaikan.",
+      "tags": ["pattern", "de-escalation", "conflict"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "cp_007",
+      "title": "Communication Pattern Usage Rules",
+      "content": "Dokumen ini digunakan saat: user meminta bantuan merespons pesan, user berada di situasi sensitif (atasan, publik, politik), risiko salah komunikasi tinggi. Dokumen ini: boleh diretrieval parsial, digabung dengan Pain Point Scenarios, digunakan untuk membentuk wording akhir.",
+      "tags": ["usage", "rules", "retrieval"],
+      "priority": "medium"
+    },
+    {
+      "chunk_id": "cp_008",
+      "title": "Pattern Selection Criteria",
+      "content": "Pemilihan pola ditentukan oleh: power gap, channel komunikasi, visibility, risk profile user. Satu respons bisa menggabungkan 1 primary pattern dan 1 supporting pattern. Ini memastikan respons yang tepat untuk konteks spesifik.",
+      "tags": ["selection", "criteria", "context"],
+      "priority": "medium"
+    },
+    {
+      "chunk_id": "cp_009",
+      "title": "Explicit Exclusions",
+      "content": "Dokumen ini TIDAK mencakup: script manipulatif, gaslighting, konfrontasi agresif, bahasa emosional. Fokus pada komunikasi yang aman secara sosial, realistis secara politik, tidak defensif, dan dapat dipertanggungjawabkan.",
+      "tags": ["exclusions", "limitations", "ethics"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "cp_010",
+      "title": "Communication Core Principle",
+      "content": "Komunikasi yang aman bukan yang paling jujur, tapi yang paling kecil risikonya untuk posisi user. Dokumen ini bukan kumpulan skrip tetap, melainkan pola berpikir komunikasi yang adaptif.",
+      "tags": ["principle", "safety", "adaptivity"],
+      "priority": "high"
+    }
+  ],
+  "metadata": {
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "total_chunks": 10,
+    "language": "id",
+    "category": "communication_patterns"
+  }
+}

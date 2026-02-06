@@ -1,0 +1,113 @@
+{
+  "id": "pain_points",
+  "version": "1.0",
+  "type": "pain_points",
+  "source": "corpus/pain_points.md",
+  "chunks": [
+    {
+      "chunk_id": "pp_001",
+      "title": "PP-01: Disindir Atasan di Channel Publik",
+      "content": "Context: Slack/Teams/Group chat, sindiran implisit bukan teguran langsung. Risk: reputasi di depan tim, eskalasi jika respon salah. Common Mistake: membela diri di publik, diam tanpa follow-up. Attributes: power gap (atasan-bawahan), visibility (publik), risk (tinggi).",
+      "tags": ["authority", "public", "sindiran"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "pp_002",
+      "title": "PP-02: Instruksi Ambigu dari Atasan",
+      "content": "Context: 'Coba dipikirin ya', tidak jelas ekspektasi atau deadline. Risk: disalahkan karena asumsi sendiri, overwork tanpa recognition. Attributes: power gap (atasan-bawahan), visibility (privat), risk (sedang).",
+      "tags": ["authority", "ambigu", "instruksi"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "pp_003",
+      "title": "PP-03: Dilewati Promosi atau Kenaikan",
+      "content": "Context: tidak ada feedback jelas, alasan normatif 'belum waktunya'. Risk: stagnasi karier, label 'tidak ambisius' jika diam. Attributes: power gap (organisasi-individu), visibility (privat), risk (tinggi).",
+      "tags": ["performance", "promosi", "karier"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "pp_004",
+      "title": "PP-04: Feedback Negatif Tanpa Contoh Konkret",
+      "content": "Context: 'Kurang proaktif', 'Perlu improve komunikasi'. Risk: sulit memperbaiki tanpa arah, digunakan sebagai justifikasi di masa depan. Attributes: power gap (evaluator-evaluasi), visibility (privat), risk (sedang).",
+      "tags": ["performance", "feedback", "evaluasi"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "pp_005",
+      "title": "PP-05: Diberi Kerjaan Tambahan Terus",
+      "content": "Context: dianggap capable, tidak ada diskusi prioritas. Risk: burnout, role creep tanpa kompensasi. Attributes: power gap (minimal), visibility (bervariasi), risk (sedang).",
+      "tags": ["workload", "boundary", "additional"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "pp_006",
+      "title": "PP-06: Deadline Tidak Realistis",
+      "content": "Context: timeline ditentukan sepihak, resource tidak disesuaikan. Risk: kualitas turun, disalahkan jika gagal. Attributes: power gap (bervariasi), visibility (dokumentasi), risk (tinggi).",
+      "tags": ["workload", "deadline", "resource"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "pp_007",
+      "title": "PP-07: Tim Pasif, User Jadi Tersorot",
+      "content": "Context: user paling vokal, tim lain tidak kontribusi. Risk: dianggap dominan, dibebani ekspektasi lebih. Attributes: power gap (minimal), visibility (tim), risk (sedang).",
+      "tags": ["team", "pasif", "visibility"],
+      "priority": "medium"
+    },
+    {
+      "chunk_id": "pp_008",
+      "title": "PP-08: Credit Kerja Diambil Orang Lain",
+      "content": "Context: ide dipresentasikan ulang oleh rekan, atasan tidak tahu kontribusi asli. Risk: visibility rendah, frustrasi internal. Attributes: power gap (minimal), visibility (publik), risk (sedang).",
+      "tags": ["team", "credit", "pengakuan"],
+      "priority": "medium"
+    },
+    {
+      "chunk_id": "pp_009",
+      "title": "PP-09: Disalahpahami Lewat Chat",
+      "content": "Context: pesan singkat, tanpa tone atau konteks. Risk: konflik pasif-agresif, image defensif. Attributes: power gap (minimal), visibility (tercatat), risk (sedang).",
+      "tags": ["communication", "chat", "salahpaham"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "pp_010",
+      "title": "PP-10: Konflik Diam-Diam dengan Atasan atau Rekan",
+      "content": "Context: tidak pernah dibahas terbuka, ada ketegangan berulang. Risk: eskalasi mendadak, penilaian subjektif jangka panjang. Attributes: power gap (bervariasi), visibility (tersembunyi), risk (tinggi).",
+      "tags": ["conflict", "tersembunyi", "ketegangan"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "pp_011",
+      "title": "Pain Point Usage Rules",
+      "content": "Dokumen ini digunakan saat user menceritakan situasi konkret, boleh diretrieval parsial (per scenario), tidak digunakan untuk motivational response. AI tidak menyimpulkan emosi user, hanya memetakan situasi.",
+      "tags": ["usage", "rules", "retrieval"],
+      "priority": "medium"
+    },
+    {
+      "chunk_id": "pp_012",
+      "title": "Scenario Attributes System",
+      "content": "Setiap pain point memiliki atribut implisit: role user, power gap, visibility level, risk level, communication channel. Atribut ini digunakan backend untuk filtering retrieval, context matching, risk-based recommendation.",
+      "tags": ["attributes", "metadata", "filtering"],
+      "priority": "medium"
+    },
+    {
+      "chunk_id": "pp_013",
+      "title": "Pain Point Exclusions",
+      "content": "Dokumen ini TIDAK mencakup: masalah personal non-kerja, masalah hukum, masalah kesehatan mental, konflik di luar konteks profesional. Fokus pada situasional, sensitif secara sosial & politik, tidak bisa diselesaikan dengan jawaban generik.",
+      "tags": ["exclusions", "scope", "boundaries"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "pp_014",
+      "title": "Pain Point Core Principle",
+      "content": "Pain point adalah pemicu keputusan, bukan tempat untuk menghakimi emosi atau karakter. Digunakan untuk retrieval konteks kasus, menghindari jawaban normatif, menjaga AI tetap grounded pada realita kantor.",
+      "tags": ["principle", "grounding", "realitas"],
+      "priority": "high"
+    }
+  ],
+  "metadata": {
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "total_chunks": 14,
+    "language": "id",
+    "category": "pain_points"
+  }
+}

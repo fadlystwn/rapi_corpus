@@ -1,0 +1,235 @@
+**Version:** 1.0
+
+**Status:** Active
+
+**Type:** Core Knowledge – Scenario
+
+**Owner:** RAPI Product
+
+**Scope:** Real workplace situations & decision triggers
+
+**Last Updated:** 2026-01-29
+
+---
+
+## 1. Purpose
+
+Dokumen ini berisi **pain point nyata yang sering dialami pekerja kantor** dan menjadi **trigger utama** penggunaan AI RAPI.
+
+Pain point di sini:
+
+- Bersifat situasional
+- Sensitif secara sosial & politik
+- Tidak bisa diselesaikan dengan jawaban generik
+
+Dokumen ini digunakan untuk:
+
+- Retrieval konteks kasus
+- Menghindari jawaban normatif
+- Menjaga AI tetap grounded pada realita kantor
+
+---
+
+## 2. Usage Rule in RAG
+
+Dokumen ini:
+
+- Digunakan saat user menceritakan situasi konkret
+- Boleh diretrieval parsial (per scenario)
+- Tidak digunakan untuk motivational response
+
+AI **tidak menyimpulkan emosi user**, hanya memetakan situasi.
+
+---
+
+## 3. Pain Point Categories
+
+### 3.1 Authority & Power Dynamics
+
+### PP-01: Disindir Atasan di Channel Publik
+
+**Context**
+
+- Slack / Teams / Group chat
+- Sindiran implisit, bukan teguran langsung
+
+**Risk**
+
+- Reputasi di depan tim
+- Eskalasi jika respon salah
+
+**Common Mistake**
+
+- Membela diri di publik
+- Diam tanpa follow-up
+
+---
+
+### PP-02: Instruksi Ambigu dari Atasan
+
+**Context**
+
+- “Coba dipikirin ya”
+- Tidak jelas ekspektasi atau deadline
+
+**Risk**
+
+- Disalahkan karena asumsi sendiri
+- Overwork tanpa recognition
+
+---
+
+### 3.2 Performance & Evaluation
+
+### PP-03: Dilewati Promosi atau Kenaikan
+
+**Context**
+
+- Tidak ada feedback jelas
+- Alasan normatif: “belum waktunya”
+
+**Risk**
+
+- Stagnasi karier
+- Label “tidak ambisius” jika diam
+
+---
+
+### PP-04: Feedback Negatif Tanpa Contoh Konkret
+
+**Context**
+
+- “Kurang proaktif”
+- “Perlu improve komunikasi”
+
+**Risk**
+
+- Sulit memperbaiki tanpa arah
+- Digunakan sebagai justifikasi di masa depan
+
+---
+
+### 3.3 Workload & Boundary
+
+### PP-05: Diberi Kerjaan Tambahan Terus
+
+**Context**
+
+- Dianggap capable
+- Tidak ada diskusi prioritas
+
+**Risk**
+
+- Burnout
+- Role creep tanpa kompensasi
+
+---
+
+### PP-06: Deadline Tidak Realistis
+
+**Context**
+
+- Timeline ditentukan sepihak
+- Resource tidak disesuaikan
+
+**Risk**
+
+- Kualitas turun
+- Disalahkan jika gagal
+
+---
+
+### 3.4 Team & Peer Politics
+
+### PP-07: Tim Pasif, User Jadi Tersorot
+
+**Context**
+
+- User paling vokal
+- Tim lain tidak kontribusi
+
+**Risk**
+
+- Dianggap dominan
+- Dibebani ekspektasi lebih
+
+---
+
+### PP-08: Credit Kerja Diambil Orang Lain
+
+**Context**
+
+- Ide dipresentasikan ulang oleh rekan
+- Atasan tidak tahu kontribusi asli
+
+**Risk**
+
+- Visibility rendah
+- Frustrasi internal
+
+---
+
+### 3.5 Communication & Conflict
+
+### PP-09: Disalahpahami Lewat Chat
+
+**Context**
+
+- Pesan singkat
+- Tanpa tone atau konteks
+
+**Risk**
+
+- Konflik pasif-agresif
+- Image defensif
+
+---
+
+### PP-10: Konflik Diam-Diam dengan Atasan atau Rekan
+
+**Context**
+
+- Tidak pernah dibahas terbuka
+- Ada ketegangan berulang
+
+**Risk**
+
+- Eskalasi mendadak
+- Penilaian subjektif jangka panjang
+
+---
+
+## 4. Scenario Attributes (Metadata)
+
+Setiap pain point memiliki atribut implisit:
+
+- Role user
+- Power gap
+- Visibility level
+- Risk level
+- Communication channel
+
+Atribut ini digunakan backend untuk:
+
+- Filtering retrieval
+- Context matching
+- Risk-based recommendation
+
+---
+
+## 5. Explicit Exclusion
+
+Dokumen ini TIDAK mencakup:
+
+- Masalah personal non-kerja
+- Masalah hukum
+- Masalah kesehatan mental
+- Konflik di luar konteks profesional
+
+---
+
+## Core Principle
+
+> Pain point adalah pemicu keputusan,
+bukan tempat untuk menghakimi emosi atau karakter.
+>

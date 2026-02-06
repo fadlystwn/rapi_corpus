@@ -1,0 +1,85 @@
+{
+  "always_include": ["guardrails", "response_standards"],
+  "similarity_retrieval": [
+    "pain_points",
+    "decision_principles",
+    "communication_patterns"
+  ],
+  "conditional_include": {
+    "risk_matrix": {
+      "trigger_keywords": [
+        "risiko",
+        "bahaya",
+        "berbahaya",
+        "berisiko",
+        "dampak",
+        "konsekuensi",
+        "ancaman",
+        "resiko",
+        "danger",
+        "threat",
+        "consequence",
+        "legal",
+        "hukum",
+        "komplain",
+        "keluhan",
+        "resign",
+        "mundur",
+        "unsafe",
+        "tidak aman"
+      ],
+      "min_risk_level": "medium",
+      "required_context": ["power_gap", "visibility", "career_impact"]
+    }
+  },
+  "retrieval_order": [
+    "guardrails",
+    "response_standards",
+    "risk_matrix",
+    "decision_principles",
+    "pain_points",
+    "communication_patterns"
+  ],
+  "limits": {
+    "max_chunks": 12,
+    "max_chunks_per_type": {
+      "guardrails": 3,
+      "response_standards": 3,
+      "pain_points": 3,
+      "decision_principles": 3,
+      "communication_patterns": 2,
+      "risk_matrix": 2
+    },
+    "similarity_threshold": 0.65,
+    "max_total_tokens": 8000
+  },
+  "fallback_behavior": {
+    "on_no_similarity_match": [
+      "guardrails",
+      "response_standards"
+    ],
+    "response_mode": "safe_generic",
+    "default_response": "Saya tidak bisa memberikan saran spesifik untuk situasi ini. Mari kita fokus pada opsi komunikasi yang aman dan profesional."
+  },
+  "safety_rules": {
+    "guardrail_override": true,
+    "domain_check_first": true,
+    "tone_enforcement": true,
+    "risk_assessment_required": false
+  },
+  "boost_factors": {
+    "guardrails": 2.5,
+    "response_standards": 2.0,
+    "risk_matrix": 1.8,
+    "pain_points": 1.6,
+    "decision_principles": 1.7,
+    "communication_patterns": 1.5
+  },
+  "exclusion_patterns": [
+    "medical_advice",
+    "legal_advice",
+    "financial_advice",
+    "emotional_manipulation",
+    "aggressive_confrontation"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "rapi-retrieval-system",
+  "version": "1.0.0",
+  "description": "RAPI AI Retrieval System with Golden Prompt Testing",
+  "main": "retrieval_executor.js",
+  "scripts": {
+    "test": "node tests/run_golden_tests.js test",
+    "test:verbose": "node tests/run_golden_tests.js test --verbose",
+    "test:single": "node tests/run_golden_tests.js test",
+    "golden:list": "node tests/run_golden_tests.js list",
+    "golden:diff": "node tests/run_golden_tests.js diff",
+    "golden:update": "node tests/run_golden_tests.js update",
+    "golden:capture": "node tests/run_golden_tests.js capture",
+    "golden:report": "node tests/run_golden_tests.js report",
+    "start": "node retrieval_executor.js",
+    "server": "node api/server.js",
+    "server:3001": "set PORT=3001&& node api/server.js"
+  },
+  "keywords": [
+    "ai",
+    "retrieval",
+    "prompt-engineering",
+    "testing",
+    "golden-prompts"
+  ],
+  "author": "RAPI Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^7.1.5",
+    "axios": "^1.6.2"
+  }
+}

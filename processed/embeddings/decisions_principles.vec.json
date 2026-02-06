@@ -1,0 +1,82 @@
+{
+  "id": "decisions_principles_embeddings",
+  "version": "1.0",
+  "model": "text-embedding-ada-002",
+  "dimension": 1536,
+  "source": "chunks/decisions_principles.json",
+  "embeddings": [
+    {
+      "chunk_id": "dp_001",
+      "vector": [0.1739, -0.2840, 0.3951, -0.4062, 0.5173],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dp_002",
+      "vector": [0.2840, -0.3951, 0.4062, -0.5173, 0.6284],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dp_003",
+      "vector": [0.3951, -0.4062, 0.5173, -0.6284, 0.7395],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dp_004",
+      "vector": [0.4062, -0.5173, 0.6284, -0.7395, 0.8406],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dp_005",
+      "vector": [0.5173, -0.6284, 0.7395, -0.8406, 0.9517],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dp_006",
+      "vector": [0.6284, -0.7395, 0.8406, -0.9517, 0.0628],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dp_007",
+      "vector": [0.7395, -0.8406, 0.9517, -0.0628, 0.1739],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dp_008",
+      "vector": [0.8406, -0.9517, 0.0628, -0.1739, 0.2840],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dp_009",
+      "vector": [0.9517, -0.0628, 0.1739, -0.2840, 0.3951],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dp_010",
+      "vector": [0.0628, -0.1739, 0.2840, -0.3951, 0.4062],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dp_011",
+      "vector": [0.1739, -0.2840, 0.3951, -0.4062, 0.5173],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    }
+  ],
+  "metadata": {
+    "total_embeddings": 11,
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "embedding_model": "text-embedding-ada-002",
+    "status": "placeholder"
+  }
+}

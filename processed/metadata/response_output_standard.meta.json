@@ -1,0 +1,46 @@
+{
+  "id": "response_output_standard_metadata",
+  "version": "1.0",
+  "source_file": "corpus/decisions_principles.md, corpus/communication_patterns.md",
+  "chunk_file": "chunks/response_output_standard.json",
+  "embedding_file": "embeddings/response_output_standard.vec.json",
+  "retrieval_config": {
+    "priority": "high",
+    "always_eligible": true,
+    "max_chunks_per_query": 4,
+    "similarity_threshold": 0.65,
+    "boost_factors": {
+      "response_format": 1.8,
+      "decision_framework": 1.5,
+      "communication_tone": 1.6
+    }
+  },
+  "access_control": {
+    "required_for_all_queries": true,
+    "pre_validation": false,
+    "post_validation": true
+  },
+  "traceability": {
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "created_by": "system",
+    "version_history": [
+      {
+        "version": "1.0",
+        "date": "2026-01-31",
+        "changes": "Initial creation combining decisions_principles and communication_patterns"
+      }
+    ]
+  },
+  "content_summary": {
+    "total_chunks": 10,
+    "main_topics": ["response_standards", "decision_framework", "communication_rules", "tone_guidelines"],
+    "language": "id",
+    "content_type": "response_standards"
+  },
+  "usage_patterns": {
+    "trigger_keywords": ["opsi", "pilihan", "aman", "assertive", "risiko", "dampak"],
+    "query_types": ["response_formatting", "option_generation", "risk_assessment"],
+    "exclusion_patterns": ["emotional_advice", "moral_judgment"]
+  }
+}

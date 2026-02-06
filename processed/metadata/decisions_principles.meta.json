@@ -1,0 +1,46 @@
+{
+  "id": "decisions_principles_metadata",
+  "version": "1.0",
+  "source_file": "corpus/decisions_principles.md",
+  "chunk_file": "chunks/decisions_principles.json",
+  "embedding_file": "embeddings/decisions_principles.vec.json",
+  "retrieval_config": {
+    "priority": "high",
+    "always_eligible": true,
+    "max_chunks_per_query": 3,
+    "similarity_threshold": 0.65,
+    "boost_factors": {
+      "decision_framework": 1.9,
+      "reasoning_base": 1.8,
+      "option_generation": 1.7
+    }
+  },
+  "access_control": {
+    "required_for_all_queries": true,
+    "pre_validation": false,
+    "post_validation": true
+  },
+  "traceability": {
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "created_by": "system",
+    "version_history": [
+      {
+        "version": "1.0",
+        "date": "2026-01-31",
+        "changes": "Initial creation from corpus/decisions_principles.md"
+      }
+    ]
+  },
+  "content_summary": {
+    "total_chunks": 11,
+    "main_topics": ["decision_framework", "reasoning_principles", "option_patterns", "core_principles"],
+    "language": "id",
+    "content_type": "decision_principles"
+  },
+  "usage_patterns": {
+    "trigger_keywords": ["keputusan", "pilihan", "opsi", "framework", "prinsip"],
+    "query_types": ["decision_support", "reasoning_framework", "option_analysis"],
+    "exclusion_patterns": ["moral_judgment", "emotional_advice", "definitive_answers"]
+  }
+}

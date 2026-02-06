@@ -1,0 +1,46 @@
+{
+  "id": "domain_guardrails_metadata",
+  "version": "1.0",
+  "source_file": "corpus/domain_guardrails.md",
+  "chunk_file": "chunks/domain_guardrails.json",
+  "embedding_file": "embeddings/domain_guardrails.vec.json",
+  "retrieval_config": {
+    "priority": "critical",
+    "always_eligible": true,
+    "max_chunks_per_query": 3,
+    "similarity_threshold": 0.7,
+    "boost_factors": {
+      "domain_boundary": 2.0,
+      "forbidden_topics": 2.5,
+      "safety": 1.8
+    }
+  },
+  "access_control": {
+    "required_for_all_queries": true,
+    "pre_validation": true,
+    "post_validation": true
+  },
+  "traceability": {
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "created_by": "system",
+    "version_history": [
+      {
+        "version": "1.0",
+        "date": "2026-01-31",
+        "changes": "Initial creation from corpus/domain_guardrails.md"
+      }
+    ]
+  },
+  "content_summary": {
+    "total_chunks": 10,
+    "main_topics": ["domain_boundaries", "forbidden_topics", "safety_rules", "response_strategies"],
+    "language": "id",
+    "content_type": "guardrails"
+  },
+  "usage_patterns": {
+    "trigger_keywords": ["domain", "boleh", "tidak boleh", "dilarang", "jawab", "respons"],
+    "query_types": ["boundary_check", "safety_validation", "scope_determination"],
+    "exclusion_patterns": ["medical_advice", "legal_advice", "financial_advice"]
+  }
+}

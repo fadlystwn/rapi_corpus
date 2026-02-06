@@ -1,0 +1,46 @@
+{
+  "id": "risk_pattern_matrix_metadata",
+  "version": "1.0",
+  "source_file": "corpus/decisions_principles.md, corpus/communication_patterns.md, corpus/pain_points.md",
+  "chunk_file": "chunks/risk_pattern_matrix.json",
+  "embedding_file": "embeddings/risk_pattern_matrix.vec.json",
+  "retrieval_config": {
+    "priority": "medium",
+    "always_eligible": false,
+    "max_chunks_per_query": 2,
+    "similarity_threshold": 0.6,
+    "boost_factors": {
+      "risk_analysis": 1.8,
+      "decision_support": 1.7,
+      "mitigation_strategies": 1.6
+    }
+  },
+  "access_control": {
+    "required_for_all_queries": false,
+    "pre_validation": false,
+    "post_validation": false
+  },
+  "traceability": {
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "created_by": "system",
+    "version_history": [
+      {
+        "version": "1.0",
+        "date": "2026-01-31",
+        "changes": "Initial creation combining multiple corpus sources for risk analysis"
+      }
+    ]
+  },
+  "content_summary": {
+    "total_chunks": 10,
+    "main_topics": ["risk_assessment", "decision_matrix", "mitigation_strategies", "context_analysis"],
+    "language": "id",
+    "content_type": "risk_matrix"
+  },
+  "usage_patterns": {
+    "trigger_keywords": ["risiko", "bahaya", "dampak", "konsekuensi", "mitigasi"],
+    "query_types": ["risk_assessment", "decision_support", "strategy_planning"],
+    "exclusion_patterns": ["guaranteed_outcomes", "predictive_analysis"]
+  }
+}

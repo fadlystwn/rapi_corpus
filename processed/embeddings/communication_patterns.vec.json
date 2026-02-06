@@ -1,0 +1,76 @@
+{
+  "id": "communication_patterns_embeddings",
+  "version": "1.0",
+  "model": "text-embedding-ada-002",
+  "dimension": 1536,
+  "source": "chunks/communication_patterns.json",
+  "embeddings": [
+    {
+      "chunk_id": "cp_001",
+      "vector": [0.1470, -0.2581, 0.3692, -0.4703, 0.5814],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "cp_002",
+      "vector": [0.2581, -0.3692, 0.4703, -0.5814, 0.6925],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "cp_003",
+      "vector": [0.3692, -0.4703, 0.5814, -0.6925, 0.7036],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "cp_004",
+      "vector": [0.4703, -0.5814, 0.6925, -0.7036, 0.8147],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "cp_005",
+      "vector": [0.5814, -0.6925, 0.7036, -0.8147, 0.9258],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "cp_006",
+      "vector": [0.6925, -0.7036, 0.8147, -0.9258, 0.0369],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "cp_007",
+      "vector": [0.7036, -0.8147, 0.9258, -0.0369, 0.1470],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "cp_008",
+      "vector": [0.8147, -0.9258, 0.0369, -0.1470, 0.2581],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "cp_009",
+      "vector": [0.9258, -0.0369, 0.1470, -0.2581, 0.3692],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "cp_010",
+      "vector": [0.0369, -0.1470, 0.2581, -0.3692, 0.4703],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    }
+  ],
+  "metadata": {
+    "total_embeddings": 10,
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "embedding_model": "text-embedding-ada-002",
+    "status": "placeholder"
+  }
+}

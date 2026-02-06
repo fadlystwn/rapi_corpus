@@ -1,0 +1,76 @@
+{
+  "id": "domain_guardrails_embeddings",
+  "version": "1.0",
+  "model": "text-embedding-ada-002",
+  "dimension": 1536,
+  "source": "chunks/domain_guardrails.json",
+  "embeddings": [
+    {
+      "chunk_id": "dg_001",
+      "vector": [0.1234, -0.5678, 0.9012, -0.3456, 0.7890],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dg_002",
+      "vector": [0.2345, -0.6789, 0.0123, -0.4567, 0.8901],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dg_003",
+      "vector": [0.3456, -0.7890, 0.1234, -0.5678, 0.9012],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dg_004",
+      "vector": [0.4567, -0.8901, 0.2345, -0.6789, 0.0123],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dg_005",
+      "vector": [0.5678, -0.9012, 0.3456, -0.7890, 0.1234],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dg_006",
+      "vector": [0.6789, -0.0123, 0.4567, -0.8901, 0.2345],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dg_007",
+      "vector": [0.7890, -0.1234, 0.5678, -0.9012, 0.3456],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dg_008",
+      "vector": [0.8901, -0.2345, 0.6789, -0.0123, 0.4567],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dg_009",
+      "vector": [0.9012, -0.3456, 0.7890, -0.1234, 0.5678],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "dg_010",
+      "vector": [0.0123, -0.4567, 0.8901, -0.2345, 0.6789],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    }
+  ],
+  "metadata": {
+    "total_embeddings": 10,
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "embedding_model": "text-embedding-ada-002",
+    "status": "placeholder"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "sections": [
+    {
+      "name": "SYSTEM_GUARDRAILS",
+      "chunk_types": ["guardrails"],
+      "instruction": "These rules are absolute and must not be violated. They define the domain boundaries and safety constraints for all responses.",
+      "required": true
+    },
+    {
+      "name": "RESPONSE_STANDARD",
+      "chunk_types": ["response_standards"],
+      "instruction": "Follow these rules for tone, structure, and formatting. Write in casual Indonesian (gaya ngobrol; boleh pakai \"lo\"), tetap sopan dan fokus ke langkah aman. Final answer maksimal 2–3 paragraf pendek, tanpa heading dan tanpa daftar panjang.",
+      "required": true
+    },
+    {
+      "name": "RISK_HANDLING",
+      "chunk_types": ["risk_matrix"],
+      "instruction": "Apply these only if risk indicators are present in the user query. Use for risk assessment and mitigation strategies.",
+      "required": false
+    },
+    {
+      "name": "DECISION_LOGIC",
+      "chunk_types": ["decision_principles"],
+      "instruction": "Use these principles to guide reasoning and option generation. Apply the power, visibility, and risk framework consistently.",
+      "required": false
+    },
+    {
+      "name": "USER_CONTEXT",
+      "chunk_types": ["pain_points"],
+      "instruction": "This describes the user's situation and constraints. Match scenarios to provide contextually relevant advice.",
+      "required": false
+    },
+    {
+      "name": "COMMUNICATION_STYLE",
+      "chunk_types": ["communication_patterns"],
+      "instruction": "Use these patterns when composing the final answer. Select appropriate patterns based on power gap and communication channel.",
+      "required": false
+    }
+  ],
+  "assembly_rules": {
+    "preserve_order": true,
+    "deduplicate_chunks": true,
+    "max_total_tokens": 6000,
+    "section_separator": "\n---\n",
+    "chunk_separator": "\n",
+    "include_chunk_ids": false,
+    "include_metadata": false
+  },
+  "integrity_checks": {
+    "require_all_required_sections": true,
+    "abort_on_missing_required": true,
+    "abort_on_order_violation": true,
+    "validate_chunk_types": true,
+    "check_token_limit": true,
+    "validate_chunk_ids": true
+  },
+  "fallback_behavior": {
+    "on_integrity_failure": "safe_generic_response",
+    "on_missing_required": "guardrails_only_response",
+    "on_token_limit_exceeded": "truncate_optional_sections",
+    "on_no_retrieved_chunks": "minimal_guardrails_response",
+    "log_failure": true,
+    "safe_response": "Saya tidak bisa memberikan saran spesifik untuk situasi ini. Mari kita fokus pada opsi komunikasi yang aman dan profesional."
+  },
+  "section_limits": {
+    "SYSTEM_GUARDRAILS": {
+      "max_chunks": 3,
+      "max_tokens": 1500
+    },
+    "RESPONSE_STANDARD": {
+      "max_chunks": 3,
+      "max_tokens": 1500
+    },
+    "RISK_HANDLING": {
+      "max_chunks": 2,
+      "max_tokens": 1000
+    },
+    "DECISION_LOGIC": {
+      "max_chunks": 3,
+      "max_tokens": 1200
+    },
+    "USER_CONTEXT": {
+      "max_chunks": 3,
+      "max_tokens": 1200
+    },
+    "COMMUNICATION_STYLE": {
+      "max_chunks": 2,
+      "max_tokens": 800
+    }
+  },
+  "validation_rules": {
+    "chunk_id_format": "^[a-z]{2,3}_\\d{3}$",
+    "allowed_chunk_types": ["guardrails", "response_standards", "risk_matrix", "decision_principles", "pain_points", "communication_patterns"],
+    "forbidden_content": ["medical_advice", "legal_advice", "financial_advice", "emotional_manipulation"]
+  }
+}

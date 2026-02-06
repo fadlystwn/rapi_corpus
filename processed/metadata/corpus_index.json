@@ -1,0 +1,101 @@
+{
+  "id": "corpus_master_index",
+  "version": "1.0",
+  "created_date": "2026-01-31",
+  "last_updated": "2026-01-31",
+  "total_documents": 6,
+  "total_chunks": 65,
+  "total_embeddings": 65,
+  "documents": [
+    {
+      "id": "domain_guardrails",
+      "type": "guardrails",
+      "priority": "critical",
+      "chunks": 10,
+      "source_file": "corpus/domain_guardrails.md",
+      "chunk_file": "chunks/domain_guardrails.json",
+      "embedding_file": "embeddings/domain_guardrails.vec.json",
+      "metadata_file": "metadata/domain_guardrails.meta.json",
+      "status": "active"
+    },
+    {
+      "id": "response_output_standard",
+      "type": "response_standards",
+      "priority": "high",
+      "chunks": 10,
+      "source_file": "corpus/decisions_principles.md, corpus/communication_patterns.md",
+      "chunk_file": "chunks/response_output_standard.json",
+      "embedding_file": "embeddings/response_output_standard.vec.json",
+      "metadata_file": "metadata/response_output_standard.meta.json",
+      "status": "active"
+    },
+    {
+      "id": "communication_patterns",
+      "type": "communication_patterns",
+      "priority": "high",
+      "chunks": 10,
+      "source_file": "corpus/communication_patterns.md",
+      "chunk_file": "chunks/communication_patterns.json",
+      "embedding_file": "embeddings/communication_patterns.vec.json",
+      "metadata_file": "metadata/communication_patterns.meta.json",
+      "status": "active"
+    },
+    {
+      "id": "pain_points",
+      "type": "pain_points",
+      "priority": "high",
+      "chunks": 14,
+      "source_file": "corpus/pain_points.md",
+      "chunk_file": "chunks/pain_points.json",
+      "embedding_file": "embeddings/pain_points.vec.json",
+      "metadata_file": "metadata/pain_points.meta.json",
+      "status": "active"
+    },
+    {
+      "id": "risk_pattern_matrix",
+      "type": "risk_matrix",
+      "priority": "medium",
+      "chunks": 10,
+      "source_file": "corpus/decisions_principles.md, corpus/communication_patterns.md, corpus/pain_points.md",
+      "chunk_file": "chunks/risk_pattern_matrix.json",
+      "embedding_file": "embeddings/risk_pattern_matrix.vec.json",
+      "metadata_file": "metadata/risk_pattern_matrix.meta.json",
+      "status": "active"
+    },
+    {
+      "id": "decisions_principles",
+      "type": "decision_principles",
+      "priority": "high",
+      "chunks": 11,
+      "source_file": "corpus/decisions_principles.md",
+      "chunk_file": "chunks/decisions_principles.json",
+      "embedding_file": "embeddings/decisions_principles.vec.json",
+      "metadata_file": "metadata/decisions_principles.meta.json",
+      "status": "active"
+    }
+  ],
+  "retrieval_strategy": {
+    "default_max_chunks": 5,
+    "similarity_threshold": 0.7,
+    "priority_ordering": ["critical", "high", "medium"],
+    "mandatory_documents": ["domain_guardrails"],
+    "context_combination_rules": {
+      "guardrails_first": true,
+      "max_same_type": 2,
+      "require_decision_framework": true
+    }
+  },
+  "system_info": {
+    "embedding_model": "text-embedding-ada-002",
+    "vector_dimension": 1536,
+    "language": "id",
+    "processing_date": "2026-01-31",
+    "corpus_version": "1.0"
+  },
+  "quality_metrics": {
+    "avg_chunk_length": 280,
+    "total_tokens_estimated": 18200,
+    "coverage_score": 0.95,
+    "consistency_score": 0.98
+  }
+}

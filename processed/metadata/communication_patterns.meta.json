@@ -1,0 +1,46 @@
+{
+  "id": "communication_patterns_metadata",
+  "version": "1.0",
+  "source_file": "corpus/communication_patterns.md",
+  "chunk_file": "chunks/communication_patterns.json",
+  "embedding_file": "embeddings/communication_patterns.vec.json",
+  "retrieval_config": {
+    "priority": "high",
+    "always_eligible": false,
+    "max_chunks_per_query": 3,
+    "similarity_threshold": 0.6,
+    "boost_factors": {
+      "communication_strategy": 1.8,
+      "response_pattern": 1.7,
+      "safety_communication": 1.9
+    }
+  },
+  "access_control": {
+    "required_for_all_queries": false,
+    "pre_validation": false,
+    "post_validation": false
+  },
+  "traceability": {
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "created_by": "system",
+    "version_history": [
+      {
+        "version": "1.0",
+        "date": "2026-01-31",
+        "changes": "Initial creation from corpus/communication_patterns.md"
+      }
+    ]
+  },
+  "content_summary": {
+    "total_chunks": 10,
+    "main_topics": ["communication_patterns", "response_strategies", "safety_protocols", "pattern_selection"],
+    "language": "id",
+    "content_type": "communication_patterns"
+  },
+  "usage_patterns": {
+    "trigger_keywords": ["respons", "kata", "pesan", "komunikasi", "strategi"],
+    "query_types": ["communication_advice", "response_formatting", "pattern_selection"],
+    "exclusion_patterns": ["manipulation", "aggressive_confrontation"]
+  }
+}

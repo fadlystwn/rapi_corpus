@@ -1,0 +1,100 @@
+{
+  "id": "pain_points_embeddings",
+  "version": "1.0",
+  "model": "text-embedding-ada-002",
+  "dimension": 1536,
+  "source": "chunks/pain_points.json",
+  "embeddings": [
+    {
+      "chunk_id": "pp_001",
+      "vector": [0.1593, -0.2604, 0.3715, -0.4826, 0.5937],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_002",
+      "vector": [0.2604, -0.3715, 0.4826, -0.5937, 0.6048],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_003",
+      "vector": [0.3715, -0.4826, 0.5937, -0.6048, 0.7159],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_004",
+      "vector": [0.4826, -0.5937, 0.6048, -0.7159, 0.8260],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_005",
+      "vector": [0.5937, -0.6048, 0.7159, -0.8260, 0.9371],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_006",
+      "vector": [0.6048, -0.7159, 0.8260, -0.9371, 0.0482],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_007",
+      "vector": [0.7159, -0.8260, 0.9371, -0.0482, 0.1593],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_008",
+      "vector": [0.8260, -0.9371, 0.0482, -0.1593, 0.2604],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_009",
+      "vector": [0.9371, -0.0482, 0.1593, -0.2604, 0.3715],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_010",
+      "vector": [0.0482, -0.1593, 0.2604, -0.3715, 0.4826],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_011",
+      "vector": [0.1593, -0.2604, 0.3715, -0.4826, 0.5937],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_012",
+      "vector": [0.2604, -0.3715, 0.4826, -0.5937, 0.6048],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_013",
+      "vector": [0.3715, -0.4826, 0.5937, -0.6048, 0.7159],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    },
+    {
+      "chunk_id": "pp_014",
+      "vector": [0.4826, -0.5937, 0.6048, -0.7159, 0.8260],
+      "embedding_date": "2026-01-31",
+      "model_version": "v1"
+    }
+  ],
+  "metadata": {
+    "total_embeddings": 14,
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "embedding_model": "text-embedding-ada-002",
+    "status": "placeholder"
+  }
+}

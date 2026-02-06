@@ -1,0 +1,65 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-01-31",
+  "owner": "RAPI Product",
+  "description": "RAPI Knowledge Corpus - Domain-structured knowledge base for workplace decision assistance",
+  "domains": {
+    "career": {
+      "description": "Career decision-making and professional advancement guidance",
+      "policies": "career/policies.md",
+      "allowed_topics": "career/allowed_topics.md", 
+      "disallowed_topics": "career/disallowed_topics.md",
+      "priority": "high"
+    },
+    "communication": {
+      "description": "Professional communication strategies and workplace messaging",
+      "policies": "communication/policies.md",
+      "allowed_topics": "communication/allowed_topics.md",
+      "disallowed_topics": "communication/disallowed_topics.md", 
+      "priority": "high"
+    },
+    "engineering": {
+      "description": "Engineering workplace dynamics and technical team collaboration",
+      "policies": "engineering/policies.md",
+      "allowed_topics": "engineering/allowed_topics.md",
+      "disallowed_topics": "engineering/disallowed_topics.md",
+      "priority": "medium"
+    }
+  },
+  "scenarios": {
+    "description": "Real-world workplace cases and Q&A examples",
+    "conflict_resolution": "scenarios/conflict-resolution.md",
+    "performance_review": "scenarios/performance-review.md",
+    "pain_points": "scenarios/pain_points.md",
+    "risk_matrix": "scenarios/risk_pattern_matrix.md"
+  },
+  "glossaries": {
+    "description": "Controlled vocabulary and terminology definitions",
+    "workplace_terms": "glossaries/workplace_terms.md"
+  },
+  "core_documents": {
+    "description": "Foundational knowledge documents",
+    "communication_patterns": "communication_patterns.md",
+    "decisions_principles": "decisions_principles.md", 
+    "domain_guardrails": "domain_guardrails.md",
+    "response_output_standard": "response_output_standard.md"
+  },
+  "retrieval_config": {
+    "domain_priority_order": ["career", "communication", "engineering"],
+    "required_guardrails": ["domain_guardrails.md"],
+    "response_standards": ["response_output_standard.md"],
+    "max_chunks_per_domain": 5,
+    "similarity_threshold": 0.65
+  },
+  "safety_config": {
+    "guardrail_override": true,
+    "domain_check_first": true,
+    "exclusion_patterns": [
+      "medical_advice",
+      "legal_advice", 
+      "financial_advice",
+      "emotional_manipulation",
+      "harassment_reporting"
+    ]
+  }
+}

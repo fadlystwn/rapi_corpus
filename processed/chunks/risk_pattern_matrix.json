@@ -1,0 +1,85 @@
+{
+  "id": "risk_pattern_matrix",
+  "version": "1.0",
+  "type": "risk_matrix",
+  "source": "corpus/decisions_principles.md, corpus/communication_patterns.md, corpus/pain_points.md",
+  "chunks": [
+    {
+      "chunk_id": "rpm_001",
+      "title": "Risk Level Classification System",
+      "content": "Low Risk: aman, tapi pasif. Medium Risk: assertive terkendali. High Risk: potensi backlash. Setiap opsi harus menjelaskan dampak langsung, risiko tersembunyi, implikasi terhadap posisi dan karier.",
+      "tags": ["risk", "classification", "levels"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "rpm_002",
+      "title": "Authority Power Gap Risks",
+      "content": "High Risk scenarios: konflik terbuka dengan atasan, debat di publik, menolak instruksi langsung. Medium Risk: klarifikasi privat, boundary setting soft, visibility claim. Low Risk: acknowledgement netral, diam strategis, follow-up tertulis.",
+      "tags": ["authority", "power_gap", "risk"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "rpm_003",
+      "title": "Public Visibility Risks",
+      "content": "High Risk: respons emosional di channel publik, konfrontasi terbuka, pembelaan defensif. Medium Risk: neutral acknowledgement, reframing ke action, de-escalation. Low Risk: tidak respons, minta waktu, klarifikasi privat.",
+      "tags": ["visibility", "public", "risk"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "rpm_004",
+      "title": "Communication Channel Risk Matrix",
+      "content": "Email/Tertulis: risiko dokumentasi tinggi, perlu kehati-hatian. Slack/Chat: risiko salah interpretasi tinggi, perlu kejelasan. Meeting: risiko publik tinggi, perlu persiapan. Private: risiko minimal, tapi perlu follow-up dokumentasi.",
+      "tags": ["channel", "communication", "risk"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "rpm_005",
+      "title": "Career Impact Risk Assessment",
+      "content": "High Impact: promosi, evaluasi performa, konflik dengan atasan. Medium Impact: workload management, team dynamics, visibility. Low Impact: komunikasi sehari-hari, klarifikasi minor, koordinasi rutin.",
+      "tags": ["career", "impact", "assessment"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "rpm_006",
+      "title": "Pattern Risk Combinations",
+      "content": "Safe Combinations: Neutral Acknowledgement + Private Clarification, Reframing to Action + Follow-up. Risky Combinations: Boundary Setting + Public Channel, Visibility Claim + Aggressive Tone. Context-dependent: De-escalation + Power Gap.",
+      "tags": ["patterns", "combinations", "risk"],
+      "priority": "medium"
+    },
+    {
+      "chunk_id": "rpm_007",
+      "title": "Risk Mitigation Strategies",
+      "content": "Documentation: sel ada bukti tertulis. Timing: pilih momen yang tepat. Channel: sesuaikan dengan sensitivitas. Allies: cari dukungan jika perlu. Exit Strategy: siapkan rencana cadangan.",
+      "tags": ["mitigation", "strategies", "safety"],
+      "priority": "high"
+    },
+    {
+      "chunk_id": "rpm_008",
+      "title": "Organizational Context Risks",
+      "content": "Startup: fleksibilitas tinggi, struktur tidak formal. Corporate: prosedur ketat, dokumentasi penting. Political: aliansi penting, reputasi sensitive. Remote: komunikasi tertitik, visibility challenges.",
+      "tags": ["organizational", "context", "risk"],
+      "priority": "medium"
+    },
+    {
+      "chunk_id": "rpm_009",
+      "title": "Personal Risk Profile Factors",
+      "content": "Position: junior vs senior, tenured vs new. Performance: high performer vs underperformer. Relationships: strong network vs isolated. History: track record vs controversial.",
+      "tags": ["personal", "profile", "factors"],
+      "priority": "medium"
+    },
+    {
+      "chunk_id": "rpm_010",
+      "title": "Risk Decision Framework",
+      "content": "Step 1: Assess power gap dan visibility. Step 2: Evaluate career impact. Step 3: Choose appropriate risk level. Step 4: Select matching communication pattern. Step 5: Prepare mitigation strategies.",
+      "tags": ["framework", "decision", "process"],
+      "priority": "high"
+    }
+  ],
+  "metadata": {
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "total_chunks": 10,
+    "language": "id",
+    "category": "risk_matrix"
+  }
+}

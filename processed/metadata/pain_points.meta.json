@@ -1,0 +1,46 @@
+{
+  "id": "pain_points_metadata",
+  "version": "1.0",
+  "source_file": "corpus/pain_points.md",
+  "chunk_file": "chunks/pain_points.json",
+  "embedding_file": "embeddings/pain_points.vec.json",
+  "retrieval_config": {
+    "priority": "high",
+    "always_eligible": false,
+    "max_chunks_per_query": 4,
+    "similarity_threshold": 0.65,
+    "boost_factors": {
+      "scenario_matching": 1.9,
+      "context_similarity": 1.7,
+      "risk_assessment": 1.6
+    }
+  },
+  "access_control": {
+    "required_for_all_queries": false,
+    "pre_validation": false,
+    "post_validation": false
+  },
+  "traceability": {
+    "created_date": "2026-01-31",
+    "last_updated": "2026-01-31",
+    "created_by": "system",
+    "version_history": [
+      {
+        "version": "1.0",
+        "date": "2026-01-31",
+        "changes": "Initial creation from corpus/pain_points.md"
+      }
+    ]
+  },
+  "content_summary": {
+    "total_chunks": 14,
+    "main_topics": ["workplace_scenarios", "pain_points", "situational_context", "risk_factors"],
+    "language": "id",
+    "content_type": "pain_points"
+  },
+  "usage_patterns": {
+    "trigger_keywords": ["situasi", "masalah", "dilema", "konflik", "tekanan"],
+    "query_types": ["scenario_matching", "context_understanding", "risk_identification"],
+    "exclusion_patterns": ["personal_problems", "medical_issues", "legal_problems"]
+  }
+}
