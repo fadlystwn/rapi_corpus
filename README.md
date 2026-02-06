@@ -31,32 +31,37 @@ Explicitly excluded:
 
 ## Structure
 
+```text
 rapi_ai_corpus/
-├── corpus/                     # Canonical knowledge sources
+├── corpus/                              # Canonical knowledge sources
 │   ├── communication_patterns.md
 │   ├── decisions_principles.md
 │   ├── domain_guardrails.md
 │   ├── pain_points.md
-│   └── [2 files (2 md) & 0 dirs]
-├── knowledge/                  # Technical architecture documentation
+│   ├── response_output_standard.md
+│   ├── domains/
+│   ├── glossaries/
+│   ├── scenarios/
+│   └── metadata.json
+├── knowledge/                           # Technical architecture documentation
 │   ├── backend_architecture.md
 │   └── rag_architecture.md
-├── processed/                  # RAG-ready artifacts (generated)
-│   ├── chunks/                 # Text units sent to embedding
+├── processed/                           # RAG-ready artifacts (generated)
+│   ├── chunks/                          # Text units sent to embedding
 │   │   ├── domain_guardrails.json
 │   │   ├── response_output_standard.json
 │   │   ├── communication_patterns.json
 │   │   ├── pain_points.json
 │   │   ├── risk_pattern_matrix.json
 │   │   └── decisions_principles.json
-│   ├── embeddings/             # Vector data only
+│   ├── embeddings/                      # Vector data only
 │   │   ├── domain_guardrails.vec.json
 │   │   ├── response_output_standard.vec.json
 │   │   ├── communication_patterns.vec.json
 │   │   ├── pain_points.vec.json
 │   │   ├── risk_pattern_matrix.vec.json
 │   │   └── decisions_principles.vec.json
-│   ├── metadata/               # Retrieval control & traceability
+│   ├── metadata/                        # Retrieval control & traceability
 │   │   ├── domain_guardrails.meta.json
 │   │   ├── response_output_standard.meta.json
 │   │   ├── communication_patterns.meta.json
@@ -64,10 +69,11 @@ rapi_ai_corpus/
 │   │   ├── risk_pattern_matrix.meta.json
 │   │   ├── decisions_principles.meta.json
 │   │   └── corpus_index.json
-│   ├── retrieval_rules.json    # Retrieval orchestration rules
-│   └── prompt_contract.json     # Prompt assembly contract
-├── governance.md               # Update rules & ownership
-└── README.md                   # Corpus definition & usage
+│   ├── retrieval_rules.json             # Retrieval orchestration rules
+│   └── prompt_contract.json             # Prompt assembly contract
+├── control_governance_framework.md       # Update rules & ownership
+└── README.md                            # Corpus definition & usage
+```
 
 ---
 
