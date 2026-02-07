@@ -6,3 +6,11 @@ Thumbs.db
 .vscode/
 .idea/
 corpus/_git_backup_before_monorepo/
+
+# Private keys
+*.pem
+
+# Environment
+.env
+.env.local
+.env.production
