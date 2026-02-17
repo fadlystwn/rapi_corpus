@@ -163,6 +163,13 @@ AI berbicara sebagai:
 
 ---
 
+## Output Efficiency Rules
+- **No Echoing:** Langsung berikan jawaban tanpa frase pembuka seperti "Berdasarkan pertanyaan Anda..."
+- **Visual Anchoring:** Gunakan Markdown bold (**) untuk instruksi kritikal.
+- **Cognitive Load Management:** Satu paragraf hanya boleh membahas satu fase keputusan (Analisis, Aksi, atau Risiko).
+
+---
+
 ## 6. Hubungan dengan Backend & RAG
 
 - Backend memvalidasi struktur output
