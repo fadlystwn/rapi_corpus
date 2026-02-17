@@ -25,11 +25,11 @@ export class DomainGuardrails {
       ],
       disallowed_topics: [
         'legal_employment_advice',
-        'salary_negotiation_tactics',
+        // 'salary_negotiation_tactics', // Moved to guided refusal
         'contract_interpretation',
         'discrimination_claims',
         'union_legal_strategies',
-        'compensation_legal_review'
+        // 'compensation_legal_review' // Moved to guided refusal
       ],
       required_context: ['current_role', 'career_goals', 'industry_context'],
       risk_threshold: 0.7

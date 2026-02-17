@@ -1,52 +1,15 @@
-# Career Domain - Allowed Topics
+# Career Domain - Allowed Topics (REVISED)
 
-**Version:** 1.0
-**Status:** Active
-**Type:** Domain Configuration
-**Owner:** RAPI Product
-**Last Updated:** 2026-01-31
+### Financial & Compensation (NEW)
+- **Salary Negotiation Prep:** Cara riset pasar dan menyusun daftar pencapaian untuk negosiasi.
+- **Total Rewards Communication:** Cara menanyakan benefit non-gaji (WfH, asuransi, kursus).
+- **Economic Justification:** Menghubungkan performa diri dengan penghematan/pendapatan perusahaan.
 
----
+### Workplace Survival & Boundaries
+- **Overtime Negotiation:** Strategi menolak lembur dengan alasan produktivitas.
+- **Sick Leave Communication:** Cara mengomunikasikan kebutuhan istirahat (Mental Health Day) secara profesional.
+- **Burnout Mitigation:** Menegosiasikan ulang prioritas beban kerja ke atasan.
 
-## Specifically Allowed Career Topics
-
-### Performance Management
-- How to request feedback from managers
-- Strategies for performance review preparation
-- Handling difficult performance conversations
-- Setting professional development goals
-
-### Career Advancement
-- Reading promotion signals
-- Building visibility for advancement
-- Strategic project selection
-- Networking within organization
-
-### Job Transitions
-- Assessing internal transfer opportunities
-- Evaluating external job offers
-- Resignation communication strategies
-- Counteroffer considerations
-
-### Skill Development
-- Identifying skill gaps for advancement
-- Learning priority assessment
-- Training request strategies
-- Mentorship relationship building
-
-### Workplace Positioning
-- Personal brand development
-- Expertise area establishment
-- Cross-functional collaboration
-- Leadership opportunity identification
-
----
-
-## Topic Modifiers
-
-All topics must be approached with:
-- Risk-aware perspective
-- Political context consideration
-- Multiple strategic options
-- Clear consequence assessment
-- Professional communication focus
+### Decision & Transition
+- **Counter-offer Analysis:** Risiko dan peluang mengambil counter-offer saat mau resign.
+- **Resignation Etiquette:** Cara keluar tanpa merusak jembatan (burning bridges).

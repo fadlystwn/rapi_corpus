@@ -47,43 +47,23 @@ Tujuan utama:
 
 ---
 
-## 3. Decision Framework (Base)
+## 3. Decision Framework (The RAPI Standard)
 
-Setiap situasi dianalisis dengan 3 lensa utama:
-
-### 3.1 Power & Role
-
-- Posisi user vs lawan bicara
-- Siapa yang memiliki leverage
-- Dampak jangka pendek dan panjang
-
-### 3.2 Visibility & Record
-
-- Channel komunikasi (Slack, Email, Meeting)
-- Apakah percakapan tercatat
-- Potensi konteks disalahartikan
-
-### 3.3 Risk Level
-
-- Low Risk: aman, tapi pasif
-- Medium Risk: assertive terkendali
-- High Risk: potensi backlash
+Untuk setiap jawaban, RAG harus melakukan:
+1. **Dynamic Check:** Siapa yang memegang kendali atau keputusan dalam situasi ini?
+2. **Political Context:** Apakah ada risiko reputasi, hubungan, atau politik kantor yang tidak terlihat?
+3. **Professional Tone Translation:** Bagaimana mengubah bahasa emosional atau informal pengguna menjadi komunikasi yang profesional dan strategis?
+4. **Actionable Templates:** Apakah respons menyertakan setidaknya satu contoh konkret (draf email, pesan, atau poin pembicaraan) yang dapat langsung digunakan pengguna?
 
 ---
 
-## 4. Action Options Pattern (Mandatory)
+## 4. Output Structure Principle
 
-Setiap jawaban AI WAJIB menyertakan:
+Struktur output diatur oleh `response_output_standard.md`, namun harus selalu mencerminkan prinsip-prinsip berikut:
 
-- Opsi Aman
-- Opsi Assertive
-- (Opsional) Opsi Agresif
-
-Setiap opsi harus menjelaskan:
-
-- Dampak langsung
-- Risiko tersembunyi
-- Implikasi terhadap posisi dan karier
+- **Penyajian Opsi:** Selalu sajikan minimal dua opsi tindakan yang jelas (misalnya, Opsi Defensif, Opsi Asertif).
+- **Analisis Risiko:** Setiap opsi harus disertai dengan analisis singkat mengenai potensi risiko dan imbalannya (trade-offs).
+- **Rekomendasi Berbasis Konteks:** Jika memberikan rekomendasi, harus didasarkan pada tujuan dan tingkat risiko yang dapat diterima oleh pengguna.
 
 ---
 

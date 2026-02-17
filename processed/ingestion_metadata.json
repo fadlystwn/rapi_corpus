@@ -1,0 +1,67 @@
+{
+  "ingestion_config": {
+    "chunking": {
+      "strategy": "semantic",
+      "maxChunkSize": 800,
+      "overlap": 100
+    },
+    "cleaning": {
+      "normalizeWhitespace": true,
+      "removeSpecialChars": false,
+      "lowercase": false
+    },
+    "embedding": {
+      "model": "text-embedding-ada-002",
+      "dimensions": 1536,
+      "batchSize": 100
+    }
+  },
+  "processed_at": "2026-02-17T16:31:08.660Z",
+  "documents": {
+    "total": 16,
+    "by_domain": {
+      "general": 4,
+      "career": 3,
+      "communication": 3,
+      "engineering": 3,
+      "glossaries": 1,
+      "scenarios": 2
+    },
+    "by_type": {
+      "communication_patterns": 1,
+      "decision_principles": 1,
+      "allowed_topics": 6,
+      "general": 4,
+      "guardrails": 1,
+      "response_standards": 1,
+      "pain_points": 1,
+      "risk_matrix": 1
+    }
+  },
+  "chunks": {
+    "total": 16,
+    "by_type": {
+      "communication_patterns": 1,
+      "decision_principles": 1,
+      "allowed_topics": 6,
+      "general": 4,
+      "guardrails": 1,
+      "response_standards": 1,
+      "pain_points": 1,
+      "risk_matrix": 1
+    },
+    "by_domain": {
+      "general": 4,
+      "career": 3,
+      "communication": 3,
+      "engineering": 3,
+      "glossaries": 1,
+      "scenarios": 2
+    }
+  },
+  "embeddings": {
+    "total": 16,
+    "model": "text-embedding-ada-002",
+    "dimensions": 1536
+  }
+}

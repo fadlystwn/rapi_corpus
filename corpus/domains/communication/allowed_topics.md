@@ -45,13 +45,3 @@
 - Communication style adaptation
 - Inclusive language practices
 
----
-
-## Communication Modifiers
-
-All communication advice must include:
-- Power dynamic awareness
-- Channel selection guidance
-- Tone and style recommendations
-- Risk assessment for misinterpretation
-- Follow-up strategy suggestions

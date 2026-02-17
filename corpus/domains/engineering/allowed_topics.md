@@ -45,13 +45,3 @@
 - Technical resource competition
 - Engineering initiative promotion
 
----
-
-## Engineering Communication Modifiers
-
-All engineering workplace advice must include:
-- Technical complexity assessment
-- Stakeholder technical understanding level
-- Risk communication strategies
-- Business impact articulation
-- Cross-functional translation tactics

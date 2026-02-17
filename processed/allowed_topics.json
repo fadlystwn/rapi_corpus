@@ -1,0 +1,120 @@
+{
+  "type": "allowed_topics",
+  "total_chunks": 6,
+  "chunks": [
+    {
+      "chunk_id": "___corpus_domains_career_allowed_topics_md_sem_000",
+      "document_id": "___corpus_domains_career_allowed_topics_md",
+      "title": "# Career Domain - Allowed Topics (REVISED)",
+      "content": "# Career Domain - Allowed Topics (REVISED) ### Financial & Compensation (NEW) - Salary Negotiation Prep: Cara riset pasar dan menyusun daftar pencapaian untuk negosiasi. - Total Rewards Communication: Cara menanyakan benefit non-gaji (WfH, asuransi, kursus). - Economic Justification: Menghubungkan performa diri dengan penghematan/pendapatan perusahaan. ### Workplace Survival & Boundaries - Overtime Negotiation: Strategi menolak lembur dengan alasan produktivitas. - Sick Leave Communication: Cara mengomunikasikan kebutuhan istirahat (Mental Health Day) secara profesional. - Burnout Mitigation: Menegosiasikan ulang prioritas beban kerja ke atasan. ### Decision & Transition - Counter-offer Analysis: Risiko dan peluang mengambil counter-offer saat mau resign. - Resignation Etiquette: Cara keluar tanpa merusak jembatan (burning bridges).",
+      "word_count": 107,
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "metadata": {
+        "document_title": "# Career Domain - Allowed Topics (REVISED)",
+        "document_path": "..\\corpus\\domains\\career\\allowed_topics.md",
+        "chunk_type": "semantic",
+        "created_at": "2026-02-17T16:31:08.622Z"
+      },
+      "tags": [
+        "allowed_topics",
+        "career"
+      ]
+    },
+    {
+      "chunk_id": "___corpus_domains_career_disallowed_topics_md_sem_000",
+      "document_id": "___corpus_domains_career_disallowed_topics_md",
+      "title": "# Career Domain - Disallowed Topics (REVISED)",
+      "content": "# Career Domain - Disallowed Topics (REVISED) ## Explicitly Disallowed (Red Lines) - Legal & Compliance: Tafsir kontrak hukum spesifik atau prosedur tuntutan diskriminasi (arahkan ke pengacara). - Unethical Tactics: Pemalsuan resume, sabotase kantor, atau pencurian data perusahaan. - Illegal Acts: Strategi melanggar hukum tenaga kerja atau menghindari pajak. - Clinical Advice: Diagnosis kesehatan mental atau saran medis teknis (arahkan ke profesional). ## Boundary Protocol Jika user meminta hal di atas: 1. Akui rasa frustrasi user. 2. Jelaskan bahwa sistem tidak memiliki kompetensi hukum/medis. 3. Berikan opsi topik \"Allowed\" terdekat (misal: daripada tuntutan hukum, arahkan ke strategi komunikasi resolusi konflik).",
+      "word_count": 100,
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "metadata": {
+        "document_title": "# Career Domain - Disallowed Topics (REVISED)",
+        "document_path": "..\\corpus\\domains\\career\\disallowed_topics.md",
+        "chunk_type": "semantic",
+        "created_at": "2026-02-17T16:31:08.622Z"
+      },
+      "tags": [
+        "allowed_topics",
+        "career"
+      ]
+    },
+    {
+      "chunk_id": "___corpus_domains_communication_allowed_topics_md_sem_000",
+      "document_id": "___corpus_domains_communication_allowed_topics_md",
+      "title": "# Communication Domain - Allowed Topics",
+      "content": "# Communication Domain - Allowed Topics Version: 1.0 Status: Active Type: Domain Configuration Owner: RAPI Product Last Updated: 2026-01-31 --- ## Specifically Allowed Communication Topics ### Digital Communication - Email composition and strategy - Slack/Teams messaging tactics - Professional text messaging - Social media workplace communication - Documentation and record-keeping ### Verbal Communication - Meeting participation strategies - Presentation delivery - Difficult conversation preparation - Upward communication (to managers) - Peer-to-peer dialogue tactics ### Conflict Communication - De-escalation techniques - Assertive vs. aggressive communication - Apology and acknowledgment strategies - Boundary setting communication - Feedback delivery and reception ### Strategic Communication - Influence and persuasion tactics - Stakeholder communication planning - Change management communication - Crisis communication response - Cross-functional coordination ### Cultural and Contextual Communication - Remote team communication - Cross-cultural workplace interaction - Multi-generational communication - Communication style adaptation - Inclusive language practices",
+      "word_count": 145,
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "metadata": {
+        "document_title": "# Communication Domain - Allowed Topics",
+        "document_path": "..\\corpus\\domains\\communication\\allowed_topics.md",
+        "chunk_type": "semantic",
+        "created_at": "2026-02-17T16:31:08.622Z"
+      },
+      "tags": [
+        "allowed_topics",
+        "communication"
+      ]
+    },
+    {
+      "chunk_id": "___corpus_domains_communication_disallowed_topics_md_sem_000",
+      "document_id": "___corpus_domains_communication_disallowed_topics_md",
+      "title": "# Communication Domain - Disallowed Topics",
+      "content": "# Communication Domain - Disallowed Topics Version: 1.0 Status: Active Type: Domain Configuration Owner: RAPI Product Last Updated: 2026-01-31 --- ## Explicitly Disallowed Communication Topics ### Legal and HR Procedures - Harassment reporting procedures - Legal complaint filing - HR grievance processes - Whistleblowing procedures - Regulatory compliance reporting ### Medical and Personal Communication - Medical accommodation requests - Mental health disclosure strategies - Personal crisis communication - Family emergency communication - Disability communication tactics ### Relationship Advice - Romantic workplace relationships - Personal friendship conflicts - Family communication therapy - Marriage counseling - Parent-child workplace issues ### Manipulative Tactics - Deception strategies - Emotional manipulation techniques - Gaslighting tactics - Covert influence methods - Unethical persuasion ### Illegal Activities - Fraud communication strategies - Cover-up communication planning - Illegal coordination tactics - Conspiracy communication - Corporate espionage communication --- ## Response Protocol for Disallowed Topics 1. Immediate Boundary Setting - \"I can't provide guidance on [topic]\" - \"This falls outside my scope of workplace decision support\" 2. Resource Redirection - HR department for policy issues - Legal counsel for legal matters - Medical professionals for health concerns - Therapists for personal relationship issues 3. Alternative Offerings - \"While I can't help with [disallowed topic], I can assist with...\" - \"For workplace communication strategies, I can help you...\" --- ## Special Handling Some topics require enhanced safety protocols: - Any mention of self-harm or harm to others - Illegal activities disclosure - Serious policy violations - Security concerns These trigger immediate safety responses and potential escalation per platform guidelines.",
+      "word_count": 259,
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "metadata": {
+        "document_title": "# Communication Domain - Disallowed Topics",
+        "document_path": "..\\corpus\\domains\\communication\\disallowed_topics.md",
+        "chunk_type": "semantic",
+        "created_at": "2026-02-17T16:31:08.622Z"
+      },
+      "tags": [
+        "allowed_topics",
+        "communication"
+      ]
+    },
+    {
+      "chunk_id": "___corpus_domains_engineering_allowed_topics_md_sem_000",
+      "document_id": "___corpus_domains_engineering_allowed_topics_md",
+      "title": "# Engineering Domain - Allowed Topics",
+      "content": "# Engineering Domain - Allowed Topics Version: 1.0 Status: Active Type: Domain Configuration Owner: RAPI Product Last Updated: 2026-01-31 --- ## Specifically Allowed Engineering Topics ### Engineering Team Dynamics - Cross-functional collaboration strategies - Engineering team communication - Technical leadership approaches - Engineering conflict resolution - Team structure and organization ### Technical Project Management - Engineering project communication to stakeholders - Technical risk communication - Resource allocation discussions - Timeline negotiation strategies - Technical trade-off articulation ### Engineering Career Development - Technical career path planning - Engineering skill development strategies - Technical leadership transition - Cross-functional role movement - Engineering expertise positioning ### Business-Technical Interface - Technical concept communication to non-technical stakeholders - Business case development for technical projects - Technical justification articulation - ROI communication for engineering initiatives - Technical risk explanation to business leaders ### Engineering Workplace Politics - Technical decision influence strategies - Engineering priority negotiation - Cross-department engineering coordination - Technical resource competition - Engineering initiative promotion",
+      "word_count": 161,
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "metadata": {
+        "document_title": "# Engineering Domain - Allowed Topics",
+        "document_path": "..\\corpus\\domains\\engineering\\allowed_topics.md",
+        "chunk_type": "semantic",
+        "created_at": "2026-02-17T16:31:08.622Z"
+      },
+      "tags": [
+        "allowed_topics",
+        "engineering"
+      ]
+    },
+    {
+      "chunk_id": "___corpus_domains_engineering_disallowed_topics_md_sem_000",
+      "document_id": "___corpus_domains_engineering_disallowed_topics_md",
+      "title": "# Engineering Domain - Disallowed Topics",
+      "content": "# Engineering Domain - Disallowed Topics Version: 1.0 Status: Active Type: Domain Configuration Owner: RAPI Product Last Updated: 2026-01-31 --- ## Explicitly Disallowed Engineering Topics ### Technical Implementation - Specific coding solutions - Architecture design decisions - Algorithm selection - Database design choices - Technology stack selection - Performance optimization techniques ### Engineering Best Practices - Code review procedures - Testing strategies - Deployment processes - Security implementation - Documentation standards - Development workflow design ### Technical Specifications - System design patterns - API design decisions - Database schema design - Network architecture - Cloud infrastructure choices - DevOps procedures ### Engineering Tools and Technologies - Programming language selection - Framework recommendations - Tool evaluation and selection - Technology migration strategies - Technical stack modernization ### Legal and Compliance Engineering - Regulatory compliance implementation - Security compliance procedures - Data privacy technical implementation - Intellectual property strategies - Open source licensing decisions --- ## Response Protocol for Disallowed Topics 1. Clear Boundary Statement - \"I can't provide specific technical guidance on [topic]\" - \"Technical implementation decisions require specialized expertise\" 2. Resource Redirection - Technical leads and architects - Engineering documentation - Industry best practices resources - Professional engineering communities 3. Alternative Workplace Focus - \"While I can't advise on technical implementation, I can help with...\" - \"For the workplace communication aspects of this technical decision...\" --- ## Special Considerations Engineering topics often blur workplace and technical domains. Focus on: - Communication strategies around technical decisions - Team dynamics in technical contexts - Career progression in engineering - Cross-functional collaboration - Stakeholder management for technical initiatives Never provide specific technical solutions or implementation advice.",
+      "word_count": 273,
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "metadata": {
+        "document_title": "# Engineering Domain - Disallowed Topics",
+        "document_path": "..\\corpus\\domains\\engineering\\disallowed_topics.md",
+        "chunk_type": "semantic",
+        "created_at": "2026-02-17T16:31:08.623Z"
+      },
+      "tags": [
+        "allowed_topics",
+        "engineering"
+      ]
+    }
+  ]
+}
