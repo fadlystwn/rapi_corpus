@@ -1,8 +1,7 @@
 {
-  "always_include": ["guardrails", "response_standards"],
+  "always_include": ["guardrails", "response_standards", "decision_principles"],
   "similarity_retrieval": [
     "pain_points",
-    "decision_principles",
     "communication_patterns"
   ],
   "conditional_include": {
@@ -30,6 +29,16 @@
       ],
       "min_risk_level": "medium",
       "required_context": ["power_gap", "visibility", "career_impact"]
+    },
+    "guardrails": {
+      "trigger_keywords": [
+        "tuntut", "hukum", "legal", "kontrak", "ilegal",
+        "manipulasi", "curang", "bohong", "memanipulasi",
+        "pelecehan", "diskriminasi", "rasis",
+        "terapi", "depresi", "stres", "burnout", "mental",
+        "absensi", "HR"
+      ],
+      "min_risk_level": "medium"
     }
   },
   "retrieval_order": [

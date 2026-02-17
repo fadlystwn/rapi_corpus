@@ -167,7 +167,14 @@ export class MarkdownLoader {
     // Determine from filename
     const fileName = pathParts[pathParts.length - 1];
     const nameWithoutExt = fileName.replace('.md', '').toLowerCase();
+
+    // Exact matches first for critical files
+    if (nameWithoutExt === 'decisions_principles') return 'decision_principles';
+    if (nameWithoutExt === 'communication_patterns') return 'communication_patterns';
+    if (nameWithoutExt === 'domain_guardrails') return 'guardrails';
+    if (nameWithoutExt === 'response_output_standard') return 'response_standards';
     
+    // Broader includes as fallback
     if (nameWithoutExt.includes('guardrail')) return 'guardrails';
     if (nameWithoutExt.includes('standard')) return 'response_standards';
     if (nameWithoutExt.includes('risk')) return 'risk_matrix';

@@ -3,9 +3,10 @@ const path = require('path');
 
 class RetrievalExecutor {
   constructor() {
-    this.retrievalRules = this.loadJSON('processed/retrieval_rules.json');
-    this.promptContract = this.loadJSON('processed/prompt_contract.json');
-    this.corpusIndex = this.loadJSON('processed/metadata/corpus_index.json');
+    this.basePath = __dirname;
+    this.retrievalRules = this.loadJSON(path.join(this.basePath, 'processed/retrieval_rules.json'));
+    this.promptContract = this.loadJSON(path.join(this.basePath, 'processed/prompt_contract.json'));
+    this.corpusIndex = this.loadJSON(path.join(this.basePath, 'processed/metadata/corpus_index.json'));
     this.chunks = this.loadAllChunks();
     this.embeddings = this.loadAllEmbeddings();
   }
@@ -19,7 +20,7 @@ class RetrievalExecutor {
   }
 
   loadAllChunks() {
-    const chunksDir = 'processed/chunks';
+    const chunksDir = path.join(this.basePath, 'processed/chunks');
     const chunks = {};
     const files = fs.readdirSync(chunksDir);
     
@@ -27,8 +28,10 @@ class RetrievalExecutor {
       if (file.endsWith('.json')) {
         const chunkData = this.loadJSON(path.join(chunksDir, file));
         for (const chunk of chunkData.chunks) {
-          // Add document type to each chunk
-          chunk.document_type = chunkData.type;
+          // Ensure document_type is set, prioritizing the type already in the chunk.
+          if (!chunk.document_type) {
+            chunk.document_type = chunkData.type;
+          }
           chunks[chunk.chunk_id] = chunk;
         }
       }
@@ -37,7 +40,7 @@ class RetrievalExecutor {
   }
 
   loadAllEmbeddings() {
-    const embeddingsDir = 'processed/embeddings';
+    const embeddingsDir = path.join(this.basePath, 'processed/embeddings');
     const embeddings = {};
     const files = fs.readdirSync(embeddingsDir);
     
@@ -111,15 +114,18 @@ class RetrievalExecutor {
       }
     }
 
-    // Conditional inclusion for risk patterns
-    if (this.shouldIncludeRiskPatterns(processedInput)) {
-      const riskChunks = this.getChunksByType('risk_matrix');
-      const selectedRiskChunks = this.selectTopChunks(riskChunks, this.retrievalRules.limits.max_chunks_per_type.risk_matrix || 2);
-      
-      for (const chunk of selectedRiskChunks) {
-        if (!usedChunkIds.has(chunk.chunk_id)) {
-          retrievedChunks.push(chunk);
-          usedChunkIds.add(chunk.chunk_id);
+    // Conditional inclusion based on rules
+    for (const chunkType in this.retrievalRules.conditional_include) {
+      const config = this.retrievalRules.conditional_include[chunkType];
+      if (this.shouldInclude(processedInput, config)) {
+        const chunks = this.getChunksByType(chunkType);
+        const selectedChunks = this.selectTopChunks(chunks, this.retrievalRules.limits.max_chunks_per_type[chunkType] || 2);
+        
+        for (const chunk of selectedChunks) {
+          if (!usedChunkIds.has(chunk.chunk_id)) {
+            retrievedChunks.push(chunk);
+            usedChunkIds.add(chunk.chunk_id);
+          }
         }
       }
     }
@@ -149,6 +155,7 @@ class RetrievalExecutor {
       }
     }
 
+
     return {
       retrieved_chunks: retrievedChunks,
       used_chunk_ids: Array.from(usedChunkIds),
@@ -156,13 +163,16 @@ class RetrievalExecutor {
     };
   }
 
-  shouldIncludeRiskPatterns(processedInput) {
-    const riskConfig = this.retrievalRules.conditional_include.risk_matrix;
-    const hasTriggerKeyword = riskConfig.trigger_keywords.some(keyword => 
+  shouldInclude(processedInput, config) {
+    if (!config || !config.trigger_keywords) return false;
+
+    const hasTriggerKeyword = config.trigger_keywords.some(keyword => 
       processedInput.normalized_input.includes(keyword)
     );
     
-    const meetsRiskLevel = this.compareRiskLevel(processedInput.risk_level, riskConfig.min_risk_level);
+    const meetsRiskLevel = config.min_risk_level ? 
+      this.compareRiskLevel(processedInput.risk_level, config.min_risk_level) :
+      true; // If no min_risk_level is defined, it always passes this check
     
     return hasTriggerKeyword && meetsRiskLevel;
   }
@@ -173,43 +183,9 @@ class RetrievalExecutor {
   }
 
   getChunksByType(chunkType) {
-    const typeMapping = {
-      'guardrails': 'guardrails',
-      'response_standards': 'response_standards',
-      'risk_matrix': 'risk_matrix',
-      'pain_points': 'pain_points',
-      'decision_principles': 'decision_principles',
-      'communication_patterns': 'communication_patterns'
-    };
-
-    const mappedType = typeMapping[chunkType];
-    if (!mappedType) return [];
-
-    return Object.values(this.chunks).filter(chunk => {
-      // Primary check: document_type - this is the most reliable method
-      if (chunk.document_type === mappedType) return true;
-      
-      // Secondary check: only use tag matching for chunks without document_type
-      // This should be rare but provides backward compatibility
-      if (!chunk.document_type && chunk.tags) {
-        return chunk.tags.some(tag => {
-          const tagLower = tag.toLowerCase();
-          const typeLower = mappedType.toLowerCase();
-          
-          // Handle singular/plural variations - be more specific
-          if (typeLower === 'guardrails' && tagLower === 'guardrail') return true;
-          if (typeLower === 'response_standards' && tagLower === 'standard') return true;
-          if (typeLower === 'risk_matrix' && tagLower === 'risk') return true;
-          if (typeLower === 'pain_points' && tagLower === 'pain_point') return true;
-          if (typeLower === 'decision_principles' && (tagLower === 'decision' || tagLower === 'principle')) return true;
-          if (typeLower === 'communication_patterns' && (tagLower === 'communication' || tagLower === 'pattern')) return true;
-          
-          return false;
-        });
-      }
-      
-      return false;
-    });
+    if (!chunkType) return [];
+    // Directly filter chunks by the provided chunkType.
+    return Object.values(this.chunks).filter(chunk => chunk.document_type === chunkType);
   }
 
   selectTopChunks(chunks, maxCount) {
@@ -265,38 +241,11 @@ class RetrievalExecutor {
   }
 
   chunkMatchesSection(chunk, sectionConfig) {
-    const typeMapping = {
-      'SYSTEM_GUARDRAILS': ['guardrails'],
-      'RESPONSE_STANDARD': ['response_standards'],
-      'RISK_HANDLING': ['risk_matrix'],
-      'DECISION_LOGIC': ['decision_principles'],
-      'USER_CONTEXT': ['pain_points'],
-      'COMMUNICATION_STYLE': ['communication_patterns']
-    };
-
-    const expectedTypes = typeMapping[sectionConfig.name];
-    if (!expectedTypes) return false;
-
-    return expectedTypes.some(type => {
-      // Check by document type first
-      if (chunk.document_type === type) return true;
-      
-      // Then check by tags
-      return chunk.tags && chunk.tags.some(tag => {
-        const tagLower = tag.toLowerCase();
-        const typeLower = type.toLowerCase();
-        
-        // Handle singular/plural variations
-        if (typeLower === 'guardrails' && tagLower.includes('guardrail')) return true;
-        if (typeLower === 'response_standards' && tagLower.includes('standard')) return true;
-        if (typeLower === 'risk_matrix' && tagLower.includes('risk')) return true;
-        if (typeLower === 'pain_points' && tagLower.includes('pain')) return true;
-        if (typeLower === 'decision_principles' && (tagLower.includes('decision') || tagLower.includes('principle'))) return true;
-        if (typeLower === 'communication_patterns' && (tagLower.includes('communication') || tagLower.includes('pattern'))) return true;
-        
-        return false;
-      });
-    });
+    if (!sectionConfig.chunk_types || !chunk.document_type) {
+      return false;
+    }
+    // Directly check if the chunk's document_type is included in the section's allowed chunk_types.
+    return sectionConfig.chunk_types.includes(chunk.document_type);
   }
 
   buildSection(sectionConfig, chunks) {

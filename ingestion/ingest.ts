@@ -202,6 +202,7 @@ export class IngestionPipeline {
         chunks: chunks.map(chunk => ({
           chunk_id: chunk.chunk_id,
           document_id: chunk.document_id,
+          document_type: chunk.document_type, // Ensure document_type is saved in the chunk
           title: chunk.title,
           content: chunk.content,
           section_title: chunk.section_title,

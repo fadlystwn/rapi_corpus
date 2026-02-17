@@ -22,7 +22,7 @@
       "name": "DECISION_LOGIC",
       "chunk_types": ["decision_principles"],
       "instruction": "Use these principles to guide reasoning and option generation. Apply the power, visibility, and risk framework consistently.",
-      "required": false
+      "required": true
     },
     {
       "name": "USER_CONTEXT",

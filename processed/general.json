@@ -5,6 +5,7 @@
     {
       "chunk_id": "___corpus_domains_career_policies_md_sem_000",
       "document_id": "___corpus_domains_career_policies_md",
+      "document_type": "general",
       "title": "# Career Domain Policies (REVISED)",
       "content": "# Career Domain Policies (REVISED) ## Decision Framework (The RAPI Standard) Untuk setiap jawaban, RAG harus melakukan: 1. Dynamic Check: Siapa yang pegang kendali di situasi ini? (Atasan/User). 2. Political Context: Apakah jawaban ini berisiko bagi reputasi user? 3. Professional Tone Translation: Mengubah bahasa emosional user menjadi bahasa kantor yang \"mahal\". 4. Actionable Templates: Selalu sertakan minimal 1 draf pesan/email. ## Safety Disclaimer Setiap saran terkait gaji atau kebijakan kantor WAJIB diakhiri dengan: \"Saran ini bersifat strategi komunikasi. Pastikan untuk mengecek kembali buku panduan karyawan (Employee Handbook) perusahaan Anda.\"",
       "word_count": 89,
@@ -14,7 +15,7 @@
         "document_title": "# Career Domain Policies (REVISED)",
         "document_path": "..\\corpus\\domains\\career\\policies.md",
         "chunk_type": "semantic",
-        "created_at": "2026-02-17T16:31:08.622Z"
+        "created_at": "2026-02-17T16:53:28.143Z"
       },
       "tags": [
         "general",
@@ -24,6 +25,7 @@
     {
       "chunk_id": "___corpus_domains_communication_policies_md_sem_000",
       "document_id": "___corpus_domains_communication_policies_md",
+      "document_type": "general",
       "title": "# Communication Domain Policies (REVISED)",
       "content": "# Communication Domain Policies (REVISED) ## Decision Framework (The RAPI Standard) Untuk setiap jawaban, RAG harus melakukan: 1. Dynamic Check: Siapa yang pegang kendali di situasi ini? (Pengirim/Penerima). 2. Political Context: Apakah pesan ini berisiko bagi reputasi user? 3. Professional Tone Translation: Mengubah bahasa emosional user menjadi bahasa kantor yang \"mahal\". 4. Actionable Templates: Selalu sertakan minimal 1 draf pesan/email. ## Safety Disclaimer Setiap saran terkait resolusi konflik atau komunikasi sensitif WAJIB diakhiri dengan: \"Saran ini bersifat strategi komunikasi. Pastikan untuk mengecek kembali buku panduan karyawan (Employee Handbook) dan kebijakan komunikasi perusahaan Anda.\"",
       "word_count": 93,
@@ -33,7 +35,7 @@
         "document_title": "# Communication Domain Policies (REVISED)",
         "document_path": "..\\corpus\\domains\\communication\\policies.md",
         "chunk_type": "semantic",
-        "created_at": "2026-02-17T16:31:08.622Z"
+        "created_at": "2026-02-17T16:53:28.143Z"
       },
       "tags": [
         "general",
@@ -43,6 +45,7 @@
     {
       "chunk_id": "___corpus_domains_engineering_policies_md_sem_000",
       "document_id": "___corpus_domains_engineering_policies_md",
+      "document_type": "general",
       "title": "# Engineering Domain Policies (REVISED)",
       "content": "# Engineering Domain Policies (REVISED) ## Decision Framework (The RAPI Standard) Untuk setiap jawaban, RAG harus melakukan: 1. Dynamic Check: Siapa pemegang keputusan teknis vs. keputusan bisnis? 2. Political Context: Apakah usulan teknis ini punya implikasi politis (misal: 'Not Invented Here' syndrome)? 3. Professional Tone Translation: Mengubah kritik teknis yang tajam menjadi feedback yang konstruktif. 4. Actionable Templates: Selalu sertakan minimal 1 draf email untuk negosiasi timeline atau justifikasi teknis. ## Safety Disclaimer Setiap saran terkait estimasi, arsitektur, atau komitmen teknis WAJIB diakhiri dengan: \"Saran ini bersifat strategi komunikasi dan manajemen proyek. Selalu validasi kelayakan teknis dan estimasi dengan tim engineering Anda serta mengacu pada dokumentasi teknis yang ada.\"",
       "word_count": 109,
@@ -52,7 +55,7 @@
         "document_title": "# Engineering Domain Policies (REVISED)",
         "document_path": "..\\corpus\\domains\\engineering\\policies.md",
         "chunk_type": "semantic",
-        "created_at": "2026-02-17T16:31:08.623Z"
+        "created_at": "2026-02-17T16:53:28.145Z"
       },
       "tags": [
         "general",
@@ -62,6 +65,7 @@
     {
       "chunk_id": "___corpus_glossaries_workplace_terms_md_sem_000",
       "document_id": "___corpus_glossaries_workplace_terms_md",
+      "document_type": "general",
       "title": "# Workplace Terms Glossary",
       "content": "# Workplace Terms Glossary Version: 1.0 Status: Active Type: Controlled Vocabulary Owner: RAPI Product Last Updated: 2026-01-31 --- ## Purpose This glossary defines key workplace terminology used throughout the RAPI system to ensure consistent understanding and communication. --- ## Core RAPI Concepts ### Power Gap The difference in authority, influence, and positional power between individuals in a workplace interaction. Usage: Assessing communication strategies and risk levels. ### Visibility The degree to which actions, communications, and decisions are observable by others in the organization. Usage: Evaluating risk and strategic communication approaches. ### Career Impact The potential effect of a decision or action on long-term career progression and opportunities. Usage: Risk assessment and decision recommendation. --- ## Communication Terms ### Upward Communication Communication from subordinate to superior or management. Context: Performance reviews, requests, conflict resolution. ### Peer Communication Communication between colleagues at similar organizational levels. Context: Collaboration, conflict, influence. ### Downward Communication Communication from superior to subordinate. Context: Delegation, feedback, direction. ### Cross-functional Communication Communication between different departments or functional areas. Context: Project coordination, resource negotiation. --- ## Risk Assessment Terms ### Low Risk (R1) Minimal career impact, easily recoverable, low visibility. ### Medium Risk (R2) Moderate career impact, some visibility, partially recoverable. ### High Risk (R3) Significant career impact, high visibility, difficult to recover. --- ## Decision Framework Terms ### Safe Option Conservative choice with minimal risk but limited upside. ### Assertive Option Balanced approach with moderate risk and potential reward. ### Aggressive Option High-risk, high-reward choice with significant potential consequences. --- ## Organizational Dynamics Terms ### Office Politics Informal influence networks and power dynamics in workplace decision-making. ### Stakeholder Management Strategic communication and relationship management with affected parties. ### Change Management Process of guiding organizational transition and minimizing resistance. --- ## Usage Guidelines - Use terms consistently across all RAPI communications - Define terms when first introduced in user-facing content - Maintain alignment with organizational communication standards - Update definitions as workplace terminology evolves",
       "word_count": 324,
@@ -71,7 +75,7 @@
         "document_title": "# Workplace Terms Glossary",
         "document_path": "..\\corpus\\glossaries\\workplace_terms.md",
         "chunk_type": "semantic",
-        "created_at": "2026-02-17T16:31:08.624Z"
+        "created_at": "2026-02-17T16:53:28.145Z"
       },
       "tags": [
         "general",
