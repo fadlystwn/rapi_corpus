@@ -70,7 +70,7 @@ Create environment files for different environments:
 ```bash
 NODE_ENV=development
 PORT=3000
-ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001
+ALLOWED_ORIGINS=https://corpusrapi.my.id,http://localhost:3001
 ENABLE_FILE_LOGGING=true
 ```
 
@@ -78,7 +78,7 @@ ENABLE_FILE_LOGGING=true
 ```bash
 NODE_ENV=production
 PORT=3000
-ALLOWED_ORIGINS=https://your-domain.com
+ALLOWED_ORIGINS=https://corpusrapi.my.id
 ENABLE_FILE_LOGGING=true
 GRAFANA_PASSWORD=your-secure-password
 ```
@@ -95,7 +95,7 @@ GRAFANA_PASSWORD=your-secure-password
 ### Retrieval Endpoint Usage
 
 ```bash
-curl -X POST http://localhost:3000/api/retrieve \
+curl -X POST https://corpusrapi.my.id/api/retrieve \
   -H "Content-Type: application/json" \
   -d '{
     "input": "Bagaimana cara merespons atasan yang menyindir?",
@@ -209,7 +209,7 @@ Nginx provides load balancing across multiple API instances.
 1. **API not responding:**
    ```bash
    docker-compose logs rapi-api
-   curl http://localhost:3000/health
+   curl https://corpusrapi.my.id/health
    ```
 
 2. **High memory usage:**
@@ -228,13 +228,13 @@ Nginx provides load balancing across multiple API instances.
 
 ```bash
 # API health
-curl -f http://localhost:3000/health
+curl -f https://corpusrapi.my.id/health
 
 # System status
-curl http://localhost:3000/api/status
+curl https://corpusrapi.my.id/api/status
 
 # Through Nginx
-curl http://localhost/health
+curl https://corpusrapi.my.id/health
 ```
 
 ## Maintenance

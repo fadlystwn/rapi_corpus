@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 class RAPIClient {
-  constructor(baseURL = 'http://localhost:3000') {
+  constructor(baseURL = 'https://corpusrapi.my.id') {
     this.client = axios.create({
       baseURL,
       timeout: 10000,
