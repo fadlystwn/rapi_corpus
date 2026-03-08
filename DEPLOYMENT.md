@@ -145,9 +145,9 @@ Request logs are stored in `logs/requests-YYYY-MM-DD.log`:
 
 ### Rate Limiting
 
-- **API endpoints**: 100 requests per 15 minutes per IP
-- **Health checks**: 30 requests per 15 minutes per IP
-- **Nginx layer**: Additional rate limiting
+- **API endpoints**: 10 requests per second per IP (600 requests/minute)
+- **Health checks**: 30 requests per second per IP (1800 requests/minute)
+- **Nginx layer**: Additional rate limiting with burst capacity
 
 ### Security Headers
 
@@ -167,9 +167,14 @@ Request logs are stored in `logs/requests-YYYY-MM-DD.log`:
 ### SSL/TLS Configuration
 
 1. **Obtain SSL certificates** (Let's Encrypt recommended)
-2. **Place certificates** in `deployment/ssl/`
-3. **Update nginx.conf** with SSL configuration
-4. **Uncomment HTTPS server block**
+2. **Place certificates** in your preferred location
+3. **Set environment variables** for certificate paths:
+   ```bash
+   export SSL_CERT_PATH=/path/to/your/cert.pem
+   export SSL_KEY_PATH=/path/to/your/key.pem
+   ```
+4. **Update nginx.conf** with SSL configuration
+5. **Uncomment HTTPS server block**
 
 ### Scaling
 
