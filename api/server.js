@@ -86,6 +86,8 @@ class RAPIServer {
           data: {
             prompt: result.prompt,
             response_mode: result.response_mode,
+            isWorkplaceScenario: result.isWorkplaceScenario,
+            promptVariations: result.promptVariations,
             metadata: {
               ...result.metadata,
               processing_time_ms: processingTime,

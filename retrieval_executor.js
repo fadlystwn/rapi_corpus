@@ -96,6 +96,27 @@ class RetrievalExecutor {
     return null;
   }
 
+  isWorkplaceScenario(processedInput) {
+    const workplaceKeywords = [
+      'atasan', 'boss', 'manager', 'tim', 'team', 'rekan', 'kolega',
+      'komunikasi kerja', 'meeting', 'rapat', 'project', 'proyek',
+      'deadline', 'kantor', 'office', 'kerja', 'pekerjaan',
+      'bawahan', 'senior', 'junior', 'klien', 'client',
+      'presentasi', 'laporan', 'report', 'feedback'
+    ];
+
+    const workplaceIntents = ['communication_help', 'problem_description', 'advice_seeking'];
+
+    const hasWorkplaceKeyword = workplaceKeywords.some(keyword => 
+      processedInput.normalized_input.includes(keyword)
+    );
+
+    const hasWorkplaceIntent = workplaceIntents.includes(processedInput.intent);
+    const hasRoleContext = processedInput.role_context !== null;
+
+    return hasWorkplaceKeyword && (hasWorkplaceIntent || hasRoleContext);
+  }
+
   performRetrieval(processedInput) {
     const retrievedChunks = [];
     const usedChunkIds = new Set();
@@ -285,6 +306,45 @@ class RetrievalExecutor {
     };
   }
 
+  generatePromptVariations(basePrompt, processedInput) {
+    const baseSections = basePrompt.substring(0, basePrompt.indexOf('\n---\n'));
+    
+    const safePrompt = `${baseSections}\n---\n\nOPSI A - PENDEKATAN AMAN:
+Berikan saran komunikasi yang KONSERVATIF dan MINIM RISIKO. Fokus pada:
+- Menunggu momentum yang tepat secara organik
+- Pendekatan tidak langsung dan sabar
+- Meminimalkan potensi konflik atau gesekan
+- Risiko rendah tapi mungkin progres lambat
+
+Tulis dalam Bahasa Indonesia casual (boleh pakai "lo"), tetap sopan. Maksimal 2-3 paragraf pendek. Jelaskan kenapa ini opsi aman dan apa trade-off-nya (progres lambat/posisi stagnan).`;
+
+    const assertivePrompt = `${baseSections}\n---\n\nOPSI B - PENDEKATAN ASSERTIVE:
+Berikan saran komunikasi yang PROAKTIF dan KONSTRUKTIF. Fokus pada:
+- Mengambil inisiatif dan visible leadership
+- Komunikasi langsung tapi tetap profesional
+- Constructive conflict yang produktif
+- Ada potensi gesekan kecil tapi menunjukkan kepemimpinan
+
+Tulis dalam Bahasa Indonesia casual (boleh pakai "lo"), tetap sopan. Maksimal 2-3 paragraf pendek. Jelaskan kenapa ini opsi assertive dan apa trade-off-nya (gesekan kecil tapi visible leadership).`;
+
+    const recommendationPrompt = `${baseSections}\n---\n\nREKOMENDASI AI:
+Analisis kedua opsi (Aman vs Assertive) dan berikan rekomendasi terbaik untuk situasi ini. Format:
+1. Pilih opsi mana yang lebih cocok (A atau B)
+2. Berikan EXACT WORDING yang bisa langsung dipakai user
+3. Jelaskan singkat kenapa opsi ini lebih baik
+
+Contoh format:
+"Opsi B, dengan wording: 'Gue lihat ada gap momentum. Kita sync 15 menit buat unlock 2 quick win minggu ini?'"
+
+Tulis dalam Bahasa Indonesia casual (boleh pakai "lo"), tetap sopan. Maksimal 2 paragraf.`;
+
+    return [
+      { type: 'safe', prompt: safePrompt },
+      { type: 'assertive', prompt: assertivePrompt },
+      { type: 'recommendation', prompt: recommendationPrompt }
+    ];
+  }
+
   createFallbackResponse(reason) {
     const fallbackConfig = this.promptContract.fallback_behavior;
     
@@ -316,19 +376,25 @@ class RetrievalExecutor {
       const retrievalResult = this.performRetrieval(processedInput);
       const promptResult = this.assemblePrompt(retrievalResult.retrieved_chunks, processedInput);
       
+      // ALWAYS generate 3 prompt variations for all queries
+      const promptVariations = this.generatePromptVariations(promptResult.prompt, processedInput);
+      
       const executionMetadata = {
         used_chunk_ids: retrievalResult.used_chunk_ids,
         excluded_chunk_ids: retrievalResult.excluded_chunk_ids,
         response_mode: promptResult.response_mode,
         risk_level: processedInput.risk_level,
         retrieval_rules_version: this.retrievalRules.version || '1.0',
-        prompt_contract_version: this.promptContract.version || '1.0'
+        prompt_contract_version: this.promptContract.version || '1.0',
+        is_workplace_scenario: true // Always true to trigger multi-option response
       };
 
       return {
         prompt: promptResult.prompt,
         response_mode: promptResult.response_mode,
-        metadata: executionMetadata
+        metadata: executionMetadata,
+        isWorkplaceScenario: true, // Always true to force 3 options
+        promptVariations: promptVariations
       };
     } catch (error) {
       return {
@@ -337,7 +403,9 @@ class RetrievalExecutor {
         metadata: {
           error: error.message,
           response_mode: 'safe_generic'
-        }
+        },
+        isWorkplaceScenario: false,
+        promptVariations: null
       };
     }
   }
