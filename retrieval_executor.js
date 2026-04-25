@@ -28,7 +28,6 @@ class RetrievalExecutor {
       if (file.endsWith('.json')) {
         const chunkData = this.loadJSON(path.join(chunksDir, file));
         for (const chunk of chunkData.chunks) {
-          // Ensure document_type is set, prioritizing the type already in the chunk.
           if (!chunk.document_type) {
             chunk.document_type = chunkData.type;
           }
@@ -122,7 +121,6 @@ class RetrievalExecutor {
     const usedChunkIds = new Set();
     const excludedChunkIds = new Set();
 
-    // Always include required chunk types
     for (const chunkType of this.retrievalRules.always_include) {
       const chunks = this.getChunksByType(chunkType);
       const selectedChunks = this.selectTopChunks(chunks, this.retrievalRules.limits.max_chunks_per_type[chunkType] || 3);
@@ -135,7 +133,6 @@ class RetrievalExecutor {
       }
     }
 
-    // Conditional inclusion based on rules
     for (const chunkType in this.retrievalRules.conditional_include) {
       const config = this.retrievalRules.conditional_include[chunkType];
       if (this.shouldInclude(processedInput, config)) {
@@ -151,7 +148,6 @@ class RetrievalExecutor {
       }
     }
 
-    // Similarity-based retrieval for allowed types
     for (const chunkType of this.retrievalRules.similarity_retrieval) {
       if (usedChunkIds.size >= this.retrievalRules.limits.max_chunks) break;
       
@@ -176,7 +172,6 @@ class RetrievalExecutor {
       }
     }
 
-
     return {
       retrieved_chunks: retrievedChunks,
       used_chunk_ids: Array.from(usedChunkIds),
@@ -193,7 +188,7 @@ class RetrievalExecutor {
     
     const meetsRiskLevel = config.min_risk_level ? 
       this.compareRiskLevel(processedInput.risk_level, config.min_risk_level) :
-      true; // If no min_risk_level is defined, it always passes this check
+      true;
     
     return hasTriggerKeyword && meetsRiskLevel;
   }
@@ -205,7 +200,6 @@ class RetrievalExecutor {
 
   getChunksByType(chunkType) {
     if (!chunkType) return [];
-    // Directly filter chunks by the provided chunkType.
     return Object.values(this.chunks).filter(chunk => chunk.document_type === chunkType);
   }
 
@@ -265,7 +259,6 @@ class RetrievalExecutor {
     if (!sectionConfig.chunk_types || !chunk.document_type) {
       return false;
     }
-    // Directly check if the chunk's document_type is included in the section's allowed chunk_types.
     return sectionConfig.chunk_types.includes(chunk.document_type);
   }
 
@@ -290,12 +283,17 @@ class RetrievalExecutor {
     prompt += `Intent: ${processedInput.intent}\n`;
     prompt += `Risk Level: ${processedInput.risk_level}\n\n`;
     
-    prompt += sections.map(section => 
-      section.content
-    ).join(this.promptContract.assembly_rules.section_separator);
+    prompt += sections.map(section => section.content).join(this.promptContract.assembly_rules.section_separator);
     
-    prompt += `\n---\n\nTulis jawaban akhir dalam Bahasa Indonesia gaya casual (seperti ngobrol; boleh pakai \"lo\"), tetap sopan, tidak sarkas. Batasi jawaban jadi maksimal 2–3 paragraf pendek, tanpa heading dan tanpa daftar panjang. Ikuti guardrails dan standar respons di atas.`;
-    
+    // ── REFINED: Instruksi akhir yang ketat dan tidak ambigu ──
+    prompt += `\n---\n\n`;
+    prompt += `ATURAN OUTPUT (wajib diikuti, tidak ada pengecualian):\n`;
+    prompt += `- Bahasa: Indonesia casual, boleh pakai "lo/gue", tanpa formalities\n`;
+    prompt += `- Panjang: MAKSIMAL 2 kalimat. Bukan paragraf — kalimat.\n`;
+    prompt += `- Dilarang: bullet list, heading, kata pembuka ("Tentu saja", "Baik", "Oke"), disclaimer, atau penjelasan panjang\n`;
+    prompt += `- Isi: langsung ke trade-off atau tindakan. Tidak perlu validasi situasi user.\n`;
+    prompt += `- Format wording (jika ada): tulis langsung teks yang bisa di-copy, tanpa embel-embel\n`;
+
     return {
       prompt: prompt,
       response_mode: 'guided',
@@ -307,36 +305,42 @@ class RetrievalExecutor {
   }
 
   generatePromptVariations(basePrompt, processedInput) {
+    // Ambil base context (sebelum instruksi output)
     const baseSections = basePrompt.substring(0, basePrompt.indexOf('\n---\n'));
-    
-    const safePrompt = `${baseSections}\n---\n\nOPSI A - PENDEKATAN AMAN:
-Berikan saran komunikasi yang KONSERVATIF dan MINIM RISIKO. Fokus pada:
-- Menunggu momentum yang tepat secara organik
-- Pendekatan tidak langsung dan sabar
-- Meminimalkan potensi konflik atau gesekan
-- Risiko rendah tapi mungkin progres lambat
 
-Tulis dalam Bahasa Indonesia casual (boleh pakai "lo"), tetap sopan. Maksimal 2-3 paragraf pendek. Jelaskan kenapa ini opsi aman dan apa trade-off-nya (progres lambat/posisi stagnan).`;
+    // ── REFINED: Setiap variasi punya instruksi yang sangat ketat ──
 
-    const assertivePrompt = `${baseSections}\n---\n\nOPSI B - PENDEKATAN ASSERTIVE:
-Berikan saran komunikasi yang PROAKTIF dan KONSTRUKTIF. Fokus pada:
-- Mengambil inisiatif dan visible leadership
-- Komunikasi langsung tapi tetap profesional
-- Constructive conflict yang produktif
-- Ada potensi gesekan kecil tapi menunjukkan kepemimpinan
+    // Opsi A: Aman — satu kalimat posisi + satu kalimat trade-off
+    const safePrompt = `${baseSections}
+---
 
-Tulis dalam Bahasa Indonesia casual (boleh pakai "lo"), tetap sopan. Maksimal 2-3 paragraf pendek. Jelaskan kenapa ini opsi assertive dan apa trade-off-nya (gesekan kecil tapi visible leadership).`;
+OPSI A — AMAN:
+Tulis TEPAT 2 kalimat dalam bahasa Indonesia casual.
+Kalimat 1: Apa yang harus dilakukan (pendekatan konservatif, tidak konfrontatif).
+Kalimat 2: Trade-off-nya dalam satu frasa — posisi stagnan, progres lambat, atau terlihat pasif.
+Jangan tambahkan penjelasan, list, atau kalimat ketiga.`;
 
-    const recommendationPrompt = `${baseSections}\n---\n\nREKOMENDASI AI:
-Analisis kedua opsi (Aman vs Assertive) dan berikan rekomendasi terbaik untuk situasi ini. Format:
-1. Pilih opsi mana yang lebih cocok (A atau B)
-2. Berikan EXACT WORDING yang bisa langsung dipakai user
-3. Jelaskan singkat kenapa opsi ini lebih baik
+    // Opsi B: Assertive — satu kalimat tindakan + satu kalimat risiko
+    const assertivePrompt = `${baseSections}
+---
 
-Contoh format:
-"Opsi B, dengan wording: 'Gue lihat ada gap momentum. Kita sync 15 menit buat unlock 2 quick win minggu ini?'"
+OPSI B — ASSERTIVE:
+Tulis TEPAT 2 kalimat dalam bahasa Indonesia casual.
+Kalimat 1: Apa yang harus dilakukan (proaktif, langsung, visible).
+Kalimat 2: Risiko realistisnya dalam satu frasa — gesekan kecil, atau potensi pushback.
+Jangan tambahkan penjelasan, list, atau kalimat ketiga.`;
 
-Tulis dalam Bahasa Indonesia casual (boleh pakai "lo"), tetap sopan. Maksimal 2 paragraf.`;
+    // Rekomendasi — pilih opsi + exact wording siap pakai
+    const recommendationPrompt = `${baseSections}
+---
+
+REKOMENDASI:
+Tulis dalam format TEPAT ini — tidak lebih, tidak kurang:
+
+"Opsi [A/B], dengan wording: '[tulis kalimat yang bisa langsung dipakai user]'"
+
+Lalu tambahkan SATU kalimat pendek alasan kenapa opsi itu lebih cocok untuk situasi ini.
+Total: 2 baris. Tidak ada heading, tidak ada list.`;
 
     return [
       { type: 'safe', prompt: safePrompt },
@@ -354,7 +358,7 @@ Tulis dalam Bahasa Indonesia casual (boleh pakai "lo"), tetap sopan. Maksimal 2 
         response = fallbackConfig.safe_response;
         break;
       case 'token_limit_exceeded':
-        response = "Saya tidak bisa memberikan saran lengkap karena batasan panjang. Mari kita fokus pada opsi komunikasi yang paling aman.";
+        response = "Fokus ke opsi paling aman dulu — coba tanya lebih spesifik biar gue bisa bantu lebih detail.";
         break;
       default:
         response = fallbackConfig.safe_response;
@@ -375,8 +379,6 @@ Tulis dalam Bahasa Indonesia casual (boleh pakai "lo"), tetap sopan. Maksimal 2 
       const processedInput = this.preprocessInput(input);
       const retrievalResult = this.performRetrieval(processedInput);
       const promptResult = this.assemblePrompt(retrievalResult.retrieved_chunks, processedInput);
-      
-      // ALWAYS generate 3 prompt variations for all queries
       const promptVariations = this.generatePromptVariations(promptResult.prompt, processedInput);
       
       const executionMetadata = {
@@ -386,19 +388,19 @@ Tulis dalam Bahasa Indonesia casual (boleh pakai "lo"), tetap sopan. Maksimal 2 
         risk_level: processedInput.risk_level,
         retrieval_rules_version: this.retrievalRules.version || '1.0',
         prompt_contract_version: this.promptContract.version || '1.0',
-        is_workplace_scenario: true // Always true to trigger multi-option response
+        is_workplace_scenario: true
       };
 
       return {
         prompt: promptResult.prompt,
         response_mode: promptResult.response_mode,
         metadata: executionMetadata,
-        isWorkplaceScenario: true, // Always true to force 3 options
+        isWorkplaceScenario: true,
         promptVariations: promptVariations
       };
     } catch (error) {
       return {
-        prompt: "Maaf, terjadi kesalahan dalam memproses permintaan Anda. Silakan coba lagi dengan pertanyaan yang lebih spesifik.",
+        prompt: "Maaf, terjadi kesalahan. Coba ulangi dengan pertanyaan yang lebih spesifik.",
         response_mode: 'safe_generic',
         metadata: {
           error: error.message,

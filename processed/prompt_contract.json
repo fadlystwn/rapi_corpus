@@ -9,7 +9,7 @@
     {
       "name": "RESPONSE_STANDARD",
       "chunk_types": ["response_standards"],
-      "instruction": "Follow these rules for tone, structure, and formatting. Write in casual Indonesian (gaya ngobrol; boleh pakai \"lo\"), tetap sopan dan fokus ke langkah aman. Final answer maksimal 2–3 paragraf pendek, tanpa heading dan tanpa daftar panjang.",
+      "instruction": "Format output wajib: bahasa Indonesia casual (boleh pakai lo/gue), MAKSIMAL 2 kalimat per opsi, tanpa heading, tanpa bullet list, tanpa kata pembuka (Tentu saja / Baik / Oke / Tentu). Langsung ke tindakan dan trade-off — tidak perlu validasi situasi user atau penjelasan konteks. Setiap kalimat harus load-bearing: kalau dihapus, jawaban jadi kurang — kalau tidak, hapus.",
       "required": true
     },
     {
@@ -60,7 +60,7 @@
     "on_token_limit_exceeded": "truncate_optional_sections",
     "on_no_retrieved_chunks": "minimal_guardrails_response",
     "log_failure": true,
-    "safe_response": "Saya tidak bisa memberikan saran spesifik untuk situasi ini. Mari kita fokus pada opsi komunikasi yang aman dan profesional."
+    "safe_response": "Gue nggak bisa kasih saran spesifik untuk ini — coba tanya dengan konteks yang lebih jelas."
   },
   "section_limits": {
     "SYSTEM_GUARDRAILS": {
